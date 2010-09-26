@@ -1,0 +1,53 @@
+#
+# Lista de los todos módulos del proyecto.
+#
+# * Los nombres de los módulos son los nombres de los archivos sin extensión
+# * Ruta relativa al ${SRCDIR}
+# * Deben estar ordenados ascendentemente por dependencias
+#
+
+MODULES=misc/defs \
+	misc/func \
+	misc/matRot \
+	misc/serializable \
+	geom/transformacion \
+	visual/material \
+	geom/dibujable \
+	geom/cilindro \
+	geom/cono \
+	geom/cubo \
+	geom/disco \
+	geom/esfera \
+	geom/extrusion \
+	visual/textura \
+	geom/malla \
+	geom/revolucion \
+	geom/toro \
+	gui/estado \
+	visual/luz \
+	kernel/suelo \
+	visual/camara \
+	kernel/xmlMarshal \
+	kernel/entorno \
+	kernel/reflejos \
+	kernel/sombras \
+	kernel/escena \
+	gui/editor \
+	gui/herramientas \
+	gui/menus \
+	gui/vistas \
+	gui/ventana \
+	misc/constructor
+
+#
+# Lista con los directorios que contienen módulos
+#
+# * Ruta relativa al ${SRCDIR}
+#
+
+SRCDIRS=. \
+	geom \
+	gui \
+	kernel \
+	misc \
+	visual

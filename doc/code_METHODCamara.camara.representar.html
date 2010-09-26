@@ -1,0 +1,126 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Estado" rel="Chapter" href="Estado.html">
+<link title="Herramientas" rel="Chapter" href="Herramientas.html">
+<link title="Menus" rel="Chapter" href="Menus.html">
+<link title="Vistas" rel="Chapter" href="Vistas.html">
+<link title="Entorno" rel="Chapter" href="Entorno.html">
+<link title="Escena" rel="Chapter" href="Escena.html">
+<link title="Suelo" rel="Chapter" href="Suelo.html">
+<link title="Cilindro" rel="Chapter" href="Cilindro.html">
+<link title="Cono" rel="Chapter" href="Cono.html">
+<link title="Cubo" rel="Chapter" href="Cubo.html">
+<link title="Dibujable" rel="Chapter" href="Dibujable.html">
+<link title="Disco" rel="Chapter" href="Disco.html">
+<link title="Esfera" rel="Chapter" href="Esfera.html">
+<link title="Extrusion" rel="Chapter" href="Extrusion.html">
+<link title="Malla" rel="Chapter" href="Malla.html">
+<link title="Revolucion" rel="Chapter" href="Revolucion.html">
+<link title="Toro" rel="Chapter" href="Toro.html">
+<link title="Transformacion" rel="Chapter" href="Transformacion.html">
+<link title="Editor" rel="Chapter" href="Editor.html">
+<link title="Ventana" rel="Chapter" href="Ventana.html">
+<link title="Reflejos" rel="Chapter" href="Reflejos.html">
+<link title="Sombras" rel="Chapter" href="Sombras.html">
+<link title="XmlMarshal" rel="Chapter" href="XmlMarshal.html">
+<link title="Constructor" rel="Chapter" href="Constructor.html">
+<link title="Defs" rel="Chapter" href="Defs.html">
+<link title="Func" rel="Chapter" href="Func.html">
+<link title="MatRot" rel="Chapter" href="MatRot.html">
+<link title="Serializable" rel="Chapter" href="Serializable.html">
+<link title="Camara" rel="Chapter" href="Camara.html">
+<link title="Luz" rel="Chapter" href="Luz.html">
+<link title="Material" rel="Chapter" href="Material.html">
+<link title="Textura" rel="Chapter" href="Textura.html"><title>Camara.camara.representar</title>
+</head>
+<body>
+<code class="code"><span class="keyword">method</span>&nbsp;representar&nbsp;~(vista&nbsp;:&nbsp;<span class="constructor">Togl</span>.widget)&nbsp;~(indice&nbsp;:&nbsp;int)&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;w,&nbsp;h&nbsp;=&nbsp;<span class="constructor">Winfo</span>.width&nbsp;vista,&nbsp;<span class="constructor">Winfo</span>.height&nbsp;vista&nbsp;<span class="keyword">in</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlFunc</span>.depth_func&nbsp;<span class="keywordsign">`</span>less;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlClear</span>.depth&nbsp;(1.0);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlClear</span>.color&nbsp;<span class="constructor">Defs</span>.escena_fondo_color;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlClear</span>.clear&nbsp;[<span class="keywordsign">`</span>color;&nbsp;<span class="keywordsign">`</span>depth];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlDraw</span>.viewport&nbsp;~x:0&nbsp;~y:0&nbsp;~w&nbsp;~h;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.mode&nbsp;<span class="keywordsign">`</span>projection;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.load_identity&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;proyección&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;aspecto&nbsp;=&nbsp;(float&nbsp;w)&nbsp;/.&nbsp;(float&nbsp;h)&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">match</span>&nbsp;_proyeccion&nbsp;<span class="keyword">with</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Ortogonal</span>&nbsp;&nbsp;&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.ortho<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~x:(-1.0&nbsp;*.&nbsp;aspecto&nbsp;/.&nbsp;zoom,&nbsp;1.0&nbsp;*.&nbsp;aspecto&nbsp;/.&nbsp;zoom)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~y:(-1.0&nbsp;/.&nbsp;zoom,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0&nbsp;/.&nbsp;zoom)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~z:(-1000.0&nbsp;/.&nbsp;zoom,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1000.0&nbsp;/.&nbsp;zoom)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Perspectiva</span>&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GluMat</span>.perspective&nbsp;~fovy:(45.0&nbsp;/.&nbsp;zoom)&nbsp;~aspect:aspecto&nbsp;~z:(1.0,&nbsp;1000.0));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.mode&nbsp;<span class="keywordsign">`</span>modelview;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.load_identity&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.mult&nbsp;giro&nbsp;<span class="keywordsign">#</span>&nbsp;get;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.translate3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-.(self&nbsp;<span class="keywordsign">#</span>&nbsp;get_x&nbsp;situacion),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-.(self&nbsp;<span class="keywordsign">#</span>&nbsp;get_y&nbsp;situacion),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-.(self&nbsp;<span class="keywordsign">#</span>&nbsp;get_z&nbsp;situacion));<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;sentido&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">match</span>&nbsp;_sentido&nbsp;<span class="keyword">with</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Horario</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">GlDraw</span>.front_face&nbsp;<span class="keywordsign">`</span>cw<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Antihorario</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">GlDraw</span>.front_face&nbsp;<span class="keywordsign">`</span>ccw);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;modo&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">match</span>&nbsp;_modo&nbsp;<span class="keyword">with</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Solido</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">GlDraw</span>.polygon_mode&nbsp;~face:<span class="keywordsign">`</span>both&nbsp;<span class="keywordsign">`</span>fill<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Alambrico</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">GlDraw</span>.polygon_mode&nbsp;~face:<span class="keywordsign">`</span>both&nbsp;<span class="keywordsign">`</span>line<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Puntos</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">GlDraw</span>.polygon_mode&nbsp;~face:<span class="keywordsign">`</span>both&nbsp;<span class="keywordsign">`</span>point);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;z-buffer&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;_z_buffer&nbsp;<span class="keyword">then</span>&nbsp;<span class="constructor">Gl</span>.enable&nbsp;<span class="keywordsign">`</span>depth_test&nbsp;<span class="keyword">else</span>&nbsp;<span class="constructor">Gl</span>.disable&nbsp;<span class="keywordsign">`</span>depth_test;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;culling&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlDraw</span>.cull_face&nbsp;<span class="keywordsign">`</span>back;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;_culling&nbsp;<span class="keyword">then</span>&nbsp;<span class="constructor">Gl</span>.enable&nbsp;<span class="keywordsign">`</span>cull_face&nbsp;<span class="keyword">else</span>&nbsp;<span class="constructor">Gl</span>.disable&nbsp;<span class="keywordsign">`</span>cull_face;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;sombreado&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">match</span>&nbsp;_sombreado&nbsp;<span class="keyword">with</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Plano</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">GlDraw</span>.shade_model&nbsp;<span class="keywordsign">`</span>flat<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Suavizado</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">GlDraw</span>.shade_model&nbsp;<span class="keywordsign">`</span>smooth);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;normales&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">match</span>&nbsp;_normales&nbsp;<span class="keyword">with</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Poligono</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;()&nbsp;<span class="comment">(*&nbsp;de&nbsp;la&nbsp;representación&nbsp;se&nbsp;encargan&nbsp;los&nbsp;propios&nbsp;objetos&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Vertice</span>&nbsp;&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;());<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;iluminación&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;_iluminacion&nbsp;<span class="keyword">then</span>&nbsp;<span class="constructor">Gl</span>.enable&nbsp;<span class="keywordsign">`</span>lighting&nbsp;<span class="keyword">else</span>&nbsp;<span class="constructor">Gl</span>.disable&nbsp;<span class="keywordsign">`</span>lighting;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;dibuja&nbsp;el&nbsp;grid&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.push&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;gx,&nbsp;gy&nbsp;,gz&nbsp;=&nbsp;giro&nbsp;<span class="keywordsign">#</span>&nbsp;euler&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;x,&nbsp;y,&nbsp;z&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mod_float&nbsp;(abs_float&nbsp;gx)&nbsp;90.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mod_float&nbsp;(abs_float&nbsp;gy)&nbsp;90.0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mod_float&nbsp;(abs_float&nbsp;gz)&nbsp;90.0&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;x&nbsp;&lt;&nbsp;(<span class="constructor">Defs</span>.pixel_factor_cam_r&nbsp;/.&nbsp;2.0)&nbsp;<span class="keywordsign">&amp;&amp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;&lt;&nbsp;(<span class="constructor">Defs</span>.pixel_factor_cam_r&nbsp;/.&nbsp;2.0)&nbsp;<span class="keywordsign">&amp;&amp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z&nbsp;&lt;&nbsp;(<span class="constructor">Defs</span>.pixel_factor_cam_r&nbsp;/.&nbsp;2.0)&nbsp;<span class="keyword">then</span>&nbsp;<span class="keyword">begin</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.rotate&nbsp;~angle:gx&nbsp;~x:1.0&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.rotate&nbsp;~angle:gy&nbsp;~y:1.0&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.rotate&nbsp;~angle:gz&nbsp;~z:1.0&nbsp;()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>&nbsp;<span class="keyword">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.rotate&nbsp;~angle:(-90.0)&nbsp;~x:1.0&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.make_current&nbsp;vista;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Suelo</span>.call_display_list_alambrico&nbsp;indice;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.pop&nbsp;();<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;activa&nbsp;el&nbsp;blending&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Gl</span>.enable&nbsp;<span class="keywordsign">`</span>blend;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlFunc</span>.blend_func&nbsp;~src:<span class="keywordsign">`</span>src_alpha&nbsp;~dst:<span class="keywordsign">`</span>one_minus_src_alpha;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;las&nbsp;normales&nbsp;serán&nbsp;siempre&nbsp;unitarias&nbsp;tras&nbsp;escalados&nbsp;no&nbsp;uniformes&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Gl</span>.enable&nbsp;<span class="keywordsign">`</span>normalize;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;importante&nbsp;para&nbsp;que&nbsp;no&nbsp;se&nbsp;produzcan&nbsp;errores&nbsp;en&nbsp;las&nbsp;caras&nbsp;de&nbsp;los&nbsp;polígonos&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlLight</span>.light_model&nbsp;(<span class="keywordsign">`</span>two_side&nbsp;<span class="keyword">true</span>);<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMisc</span>.hint&nbsp;<span class="keywordsign">`</span>perspective_correction&nbsp;<span class="keywordsign">`</span>nicest</code></body></html>

@@ -1,0 +1,55 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Estado" rel="Chapter" href="Estado.html">
+<link title="Herramientas" rel="Chapter" href="Herramientas.html">
+<link title="Menus" rel="Chapter" href="Menus.html">
+<link title="Vistas" rel="Chapter" href="Vistas.html">
+<link title="Entorno" rel="Chapter" href="Entorno.html">
+<link title="Escena" rel="Chapter" href="Escena.html">
+<link title="Suelo" rel="Chapter" href="Suelo.html">
+<link title="Cilindro" rel="Chapter" href="Cilindro.html">
+<link title="Cono" rel="Chapter" href="Cono.html">
+<link title="Cubo" rel="Chapter" href="Cubo.html">
+<link title="Dibujable" rel="Chapter" href="Dibujable.html">
+<link title="Disco" rel="Chapter" href="Disco.html">
+<link title="Esfera" rel="Chapter" href="Esfera.html">
+<link title="Extrusion" rel="Chapter" href="Extrusion.html">
+<link title="Malla" rel="Chapter" href="Malla.html">
+<link title="Revolucion" rel="Chapter" href="Revolucion.html">
+<link title="Toro" rel="Chapter" href="Toro.html">
+<link title="Transformacion" rel="Chapter" href="Transformacion.html">
+<link title="Editor" rel="Chapter" href="Editor.html">
+<link title="Ventana" rel="Chapter" href="Ventana.html">
+<link title="Reflejos" rel="Chapter" href="Reflejos.html">
+<link title="Sombras" rel="Chapter" href="Sombras.html">
+<link title="XmlMarshal" rel="Chapter" href="XmlMarshal.html">
+<link title="Constructor" rel="Chapter" href="Constructor.html">
+<link title="Defs" rel="Chapter" href="Defs.html">
+<link title="Func" rel="Chapter" href="Func.html">
+<link title="MatRot" rel="Chapter" href="MatRot.html">
+<link title="Serializable" rel="Chapter" href="Serializable.html">
+<link title="Camara" rel="Chapter" href="Camara.html">
+<link title="Luz" rel="Chapter" href="Luz.html">
+<link title="Material" rel="Chapter" href="Material.html">
+<link title="Textura" rel="Chapter" href="Textura.html"><title>Editor.revolucion.escuchar_entorno</title>
+</head>
+<body>
+<code class="code"><span class="keyword">method</span>&nbsp;<span class="keyword">private</span>&nbsp;escuchar_entorno&nbsp;mat_l<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(objetos,&nbsp;materiales,&nbsp;luces&nbsp;:&nbsp;string&nbsp;list&nbsp;*&nbsp;string&nbsp;list&nbsp;*&nbsp;string&nbsp;list)&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;establece&nbsp;los&nbsp;materiales&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Listbox</span>.delete&nbsp;mat_l&nbsp;~first:(<span class="keywordsign">`</span><span class="constructor">Num</span>&nbsp;0)&nbsp;~last:<span class="keywordsign">`</span><span class="constructor">End</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Listbox</span>.insert&nbsp;mat_l&nbsp;~index:<span class="keywordsign">`</span><span class="constructor">End</span>&nbsp;~texts:[<span class="string">"Imprimación"</span>];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Listbox</span>.insert&nbsp;mat_l<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~index:<span class="keywordsign">`</span><span class="constructor">End</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~texts:(<span class="constructor">List</span>.map<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">fun</span>&nbsp;s&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keyword">let</span>&nbsp;w&nbsp;=&nbsp;<span class="constructor">Defs</span>.herramientas_listas_columnas&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">try</span>&nbsp;<span class="constructor">String</span>.sub&nbsp;s&nbsp;0&nbsp;w&nbsp;<span class="keyword">with</span>&nbsp;_&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;s)&nbsp;^&nbsp;(<span class="keyword">if</span>&nbsp;<span class="constructor">String</span>.length&nbsp;s&nbsp;&gt;&nbsp;w&nbsp;<span class="keyword">then</span>&nbsp;<span class="string">"..."</span>&nbsp;<span class="keyword">else</span>&nbsp;<span class="string">""</span>))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;materiales);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Listbox</span>.activate&nbsp;mat_l&nbsp;~index:(<span class="keywordsign">`</span><span class="constructor">Num</span>&nbsp;0)</code></body></html>

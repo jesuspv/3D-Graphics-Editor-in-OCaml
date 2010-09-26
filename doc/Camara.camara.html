@@ -1,0 +1,141 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="Start" href="index.html">
+<link rel="Up" href="Camara.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Estado" rel="Chapter" href="Estado.html">
+<link title="Herramientas" rel="Chapter" href="Herramientas.html">
+<link title="Menus" rel="Chapter" href="Menus.html">
+<link title="Vistas" rel="Chapter" href="Vistas.html">
+<link title="Entorno" rel="Chapter" href="Entorno.html">
+<link title="Escena" rel="Chapter" href="Escena.html">
+<link title="Suelo" rel="Chapter" href="Suelo.html">
+<link title="Cilindro" rel="Chapter" href="Cilindro.html">
+<link title="Cono" rel="Chapter" href="Cono.html">
+<link title="Cubo" rel="Chapter" href="Cubo.html">
+<link title="Dibujable" rel="Chapter" href="Dibujable.html">
+<link title="Disco" rel="Chapter" href="Disco.html">
+<link title="Esfera" rel="Chapter" href="Esfera.html">
+<link title="Extrusion" rel="Chapter" href="Extrusion.html">
+<link title="Malla" rel="Chapter" href="Malla.html">
+<link title="Revolucion" rel="Chapter" href="Revolucion.html">
+<link title="Toro" rel="Chapter" href="Toro.html">
+<link title="Transformacion" rel="Chapter" href="Transformacion.html">
+<link title="Editor" rel="Chapter" href="Editor.html">
+<link title="Ventana" rel="Chapter" href="Ventana.html">
+<link title="Reflejos" rel="Chapter" href="Reflejos.html">
+<link title="Sombras" rel="Chapter" href="Sombras.html">
+<link title="XmlMarshal" rel="Chapter" href="XmlMarshal.html">
+<link title="Constructor" rel="Chapter" href="Constructor.html">
+<link title="Defs" rel="Chapter" href="Defs.html">
+<link title="Func" rel="Chapter" href="Func.html">
+<link title="MatRot" rel="Chapter" href="MatRot.html">
+<link title="Serializable" rel="Chapter" href="Serializable.html">
+<link title="Camara" rel="Chapter" href="Camara.html">
+<link title="Luz" rel="Chapter" href="Luz.html">
+<link title="Material" rel="Chapter" href="Material.html">
+<link title="Textura" rel="Chapter" href="Textura.html"><title>Camara.camara</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a href="Camara.html">Up</a>
+&nbsp;</div>
+<center><h1>Class <a href="type_Camara.camara.html">Camara.camara</a></h1></center>
+<br>
+<pre><span class="keyword">class</span> <a name="TYPEcamara"></a>camara : <code class="type">Xml.xml -> object  end</code></pre><div class="info">
+Cámara<br>
+</div>
+<b>Inherits</b><ul>
+<li><a href="Serializable.serializable.html"><code class="code"><span class="constructor">Serializable</span>.serializable</code></a></li>
+</ul>
+<hr width="100%">
+<pre><span class="keyword">val</span> <a name="ATTsituacion"></a><span class="keyword">mutable</span> <a href="code_ATTCamara.camara.situacion.html">situacion</a> : <code class="type">float * float * float</code></pre><div class="info">
+Posición (X,Y,Z)<br>
+</div>
+<pre><span class="keyword">val</span> <a name="ATTgiro"></a><span class="keyword">mutable</span> <a href="code_ATTCamara.camara.giro.html">giro</a> : <code class="type"><a href="MatRot.mat_rot.html">MatRot.mat_rot</a></code></pre><div class="info">
+Matriz de rotación<br>
+</div>
+<pre><span class="keyword">val</span> <a name="ATTzoom"></a><span class="keyword">mutable</span> <a href="code_ATTCamara.camara.zoom.html">zoom</a> : <code class="type">float</code></pre><div class="info">
+Zoom<br>
+</div>
+<pre><span class="keyword">val</span> <a name="ATTnombre"></a><span class="keyword">mutable</span> <a href="code_ATTCamara.camara.nombre.html">nombre</a> : <code class="type">string</code></pre><div class="info">
+Nombre<br>
+</div>
+<pre><span class="keyword">val</span> <a name="ATT_proyeccion"></a><span class="keyword">mutable</span> <a href="code_ATTCamara.camara._proyeccion.html">_proyeccion</a> : <code class="type"><a href="Camara.html#TYPEproyeccion">proyeccion</a></code></pre><div class="info">
+Parámetros de control de la representación<br>
+</div>
+<pre><span class="keyword">val</span> <a name="ATT_sentido"></a><span class="keyword">mutable</span> <a href="code_ATTCamara.camara._sentido.html">_sentido</a> : <code class="type"><a href="Camara.html#TYPEsentido">sentido</a></code></pre><pre><span class="keyword">val</span> <a name="ATT_modo"></a><span class="keyword">mutable</span> <a href="code_ATTCamara.camara._modo.html">_modo</a> : <code class="type"><a href="Camara.html#TYPEmodo">modo</a></code></pre><pre><span class="keyword">val</span> <a name="ATT_z_buffer"></a><span class="keyword">mutable</span> <a href="code_ATTCamara.camara._z_buffer.html">_z_buffer</a> : <code class="type">bool</code></pre><pre><span class="keyword">val</span> <a name="ATT_culling"></a><span class="keyword">mutable</span> <a href="code_ATTCamara.camara._culling.html">_culling</a> : <code class="type">bool</code></pre><pre><span class="keyword">val</span> <a name="ATT_sombreado"></a><span class="keyword">mutable</span> <a href="code_ATTCamara.camara._sombreado.html">_sombreado</a> : <code class="type"><a href="Camara.html#TYPEsombreado">sombreado</a></code></pre><pre><span class="keyword">val</span> <a name="ATT_normales"></a><span class="keyword">mutable</span> <a href="code_ATTCamara.camara._normales.html">_normales</a> : <code class="type"><a href="Camara.html#TYPEnormales">normales</a></code></pre><pre><span class="keyword">val</span> <a name="ATT_iluminacion"></a><span class="keyword">mutable</span> <a href="code_ATTCamara.camara._iluminacion.html">_iluminacion</a> : <code class="type">bool</code></pre><pre><span class="keyword">method</span> <a name="METHODget_situacion"></a><a href="code_METHODCamara.camara.get_situacion.html">get_situacion</a> : <code class="type">float * float * float</code></pre><div class="info">
+Selector de la situación<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODset_situacion"></a><a href="code_METHODCamara.camara.set_situacion.html">set_situacion</a> : <code class="type">?x:float -> ?y:float -> ?z:float -> unit -> unit</code></pre><div class="info">
+Modificador de la situación<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODget_giro"></a><a href="code_METHODCamara.camara.get_giro.html">get_giro</a> : <code class="type">GlMat.t</code></pre><div class="info">
+Selector del giro<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODset_giro"></a><a href="code_METHODCamara.camara.set_giro.html">set_giro</a> : <code class="type">?x:float -> ?y:float -> ?z:float -> unit -> unit</code></pre><div class="info">
+Modificador del giro<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODget_zoom"></a><a href="code_METHODCamara.camara.get_zoom.html">get_zoom</a> : <code class="type">float</code></pre><div class="info">
+Selector del zoom<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODset_zoom"></a><a href="code_METHODCamara.camara.set_zoom.html">set_zoom</a> : <code class="type">float -> unit</code></pre><div class="info">
+Modificador del zoom<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODsituar"></a><a href="code_METHODCamara.camara.situar.html">situar</a> : <code class="type">?x:int -> ?y:int -> ?z:int -> unit -> string</code></pre><div class="info">
+Desplaza la situación en proporción a las unidades indicadas<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODgirar"></a><a href="code_METHODCamara.camara.girar.html">girar</a> : <code class="type">?x:int -> ?y:int -> ?z:int -> unit -> string</code></pre><div class="info">
+Modifica el ángulo de giro en proporción a las unidades indicadas<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODzoom"></a><a href="code_METHODCamara.camara.zoom.html">zoom</a> : <code class="type">int -> string</code></pre><div class="info">
+Modifica el zoom en proporción a las unidades indicadas<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODget_nombre"></a><a href="code_METHODCamara.camara.get_nombre.html">get_nombre</a> : <code class="type">string</code></pre><div class="info">
+Selector del nombre<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODset_nombre"></a><a href="code_METHODCamara.camara.set_nombre.html">set_nombre</a> : <code class="type">string -> unit</code></pre><div class="info">
+Modificador del nombre<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODget_sentido"></a><a href="code_METHODCamara.camara.get_sentido.html">get_sentido</a> : <code class="type">[ `Antihorario | `Horario ]</code></pre><div class="info">
+Selector del sentido de los vértices que marcan la cara frontal<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODget_normales"></a><a href="code_METHODCamara.camara.get_normales.html">get_normales</a> : <code class="type">[ `Poligono | `Vertice ]</code></pre><div class="info">
+Selector del cálculo de las normales<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODset_visualizacion"></a><a href="code_METHODCamara.camara.set_visualizacion.html">set_visualizacion</a> : <code class="type">?proyeccion:<a href="Camara.html#TYPEproyeccion">proyeccion</a> -><br>       ?sentido:<a href="Camara.html#TYPEsentido">sentido</a> -><br>       ?modo:<a href="Camara.html#TYPEmodo">modo</a> -><br>       ?z_buffer:bool -><br>       ?culling:bool -><br>       ?sombreado:<a href="Camara.html#TYPEsombreado">sombreado</a> -><br>       ?normales:<a href="Camara.html#TYPEnormales">normales</a> -> ?iluminacion:bool -> unit -> unit</code></pre><div class="info">
+Establece los parámetros de control de la representación<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODrepresentar"></a><a href="code_METHODCamara.camara.representar.html">representar</a> : <code class="type">vista:Togl.widget -> indice:int -> unit</code></pre><div class="info">
+Representa bajo la vista de la cámara<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODseleccionar"></a><a href="code_METHODCamara.camara.seleccionar.html">seleccionar</a> : <code class="type">x:int -><br>       y:int -><br>       objs:<a href="Dibujable.dibujable.html">Dibujable.dibujable</a> list -><br>       luces:<a href="Luz.luz.html">Luz.luz</a> list -> vista:Togl.widget -> [ `Luz | `Obj ] * int</code></pre><pre><span class="keyword">method</span> <a name="METHODdibujar_controles"></a><a href="code_METHODCamara.camara.dibujar_controles.html">dibujar_controles</a> : <code class="type">Togl.widget -> unit</code></pre><div class="info">
+Dibuja los controles de la cámara con una disposición en 2D<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODmostrar_parametros"></a><a href="code_METHODCamara.camara.mostrar_parametros.html">mostrar_parametros</a> : <code class="type">x:int -> y:int -> Togl.widget -> unit</code></pre><div class="info">
+Muestra un menú popup con los parámetros de visualización<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODclase"></a><a href="code_METHODCamara.camara.clase.html">clase</a> : <code class="type">string</code></pre><div class="info">
+Implementación de la interfaz <code class="code">serializable</code><br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODfrom_xml"></a><a href="code_METHODCamara.camara.from_xml.html">from_xml</a> : <code class="type">Xml.xml -> unit</code></pre><div class="info">
+Implementación de la interfaz <code class="code">serializable</code><br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODto_xml"></a><a href="code_METHODCamara.camara.to_xml.html">to_xml</a> : <code class="type">Xml.xml</code></pre><div class="info">
+Implementación de la interfaz <code class="code">serializable</code><br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODget_x"></a><span class="keyword">private</span> <a href="code_METHODCamara.camara.get_x.html">get_x</a> : <code class="type">float * float * float -> float</code></pre><div class="info">
+Obtiene la coordenada <code class="code">x</code> de un vector<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODget_y"></a><span class="keyword">private</span> <a href="code_METHODCamara.camara.get_y.html">get_y</a> : <code class="type">float * float * float -> float</code></pre><div class="info">
+Obtiene la coordenada <code class="code">y</code> de un vector<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODget_z"></a><span class="keyword">private</span> <a href="code_METHODCamara.camara.get_z.html">get_z</a> : <code class="type">float * float * float -> float</code></pre><div class="info">
+Obtiene la coordenada <code class="code">z</code> de un vector<br>
+</div>
+</body></html>

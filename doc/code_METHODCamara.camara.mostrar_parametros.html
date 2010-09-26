@@ -1,0 +1,204 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Estado" rel="Chapter" href="Estado.html">
+<link title="Herramientas" rel="Chapter" href="Herramientas.html">
+<link title="Menus" rel="Chapter" href="Menus.html">
+<link title="Vistas" rel="Chapter" href="Vistas.html">
+<link title="Entorno" rel="Chapter" href="Entorno.html">
+<link title="Escena" rel="Chapter" href="Escena.html">
+<link title="Suelo" rel="Chapter" href="Suelo.html">
+<link title="Cilindro" rel="Chapter" href="Cilindro.html">
+<link title="Cono" rel="Chapter" href="Cono.html">
+<link title="Cubo" rel="Chapter" href="Cubo.html">
+<link title="Dibujable" rel="Chapter" href="Dibujable.html">
+<link title="Disco" rel="Chapter" href="Disco.html">
+<link title="Esfera" rel="Chapter" href="Esfera.html">
+<link title="Extrusion" rel="Chapter" href="Extrusion.html">
+<link title="Malla" rel="Chapter" href="Malla.html">
+<link title="Revolucion" rel="Chapter" href="Revolucion.html">
+<link title="Toro" rel="Chapter" href="Toro.html">
+<link title="Transformacion" rel="Chapter" href="Transformacion.html">
+<link title="Editor" rel="Chapter" href="Editor.html">
+<link title="Ventana" rel="Chapter" href="Ventana.html">
+<link title="Reflejos" rel="Chapter" href="Reflejos.html">
+<link title="Sombras" rel="Chapter" href="Sombras.html">
+<link title="XmlMarshal" rel="Chapter" href="XmlMarshal.html">
+<link title="Constructor" rel="Chapter" href="Constructor.html">
+<link title="Defs" rel="Chapter" href="Defs.html">
+<link title="Func" rel="Chapter" href="Func.html">
+<link title="MatRot" rel="Chapter" href="MatRot.html">
+<link title="Serializable" rel="Chapter" href="Serializable.html">
+<link title="Camara" rel="Chapter" href="Camara.html">
+<link title="Luz" rel="Chapter" href="Luz.html">
+<link title="Material" rel="Chapter" href="Material.html">
+<link title="Textura" rel="Chapter" href="Textura.html"><title>Camara.camara.mostrar_parametros</title>
+</head>
+<body>
+<code class="code"><span class="keyword">method</span>&nbsp;mostrar_parametros&nbsp;~x&nbsp;~y&nbsp;(vista&nbsp;:&nbsp;<span class="constructor">Togl</span>.widget)&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;nombre&nbsp;=&nbsp;<span class="string">"Cámara&nbsp;"</span>&nbsp;^&nbsp;self&nbsp;<span class="keywordsign">#</span>&nbsp;get_nombre<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">and</span>&nbsp;m&nbsp;=&nbsp;<span class="constructor">Menu</span>.create&nbsp;~title:nombre&nbsp;vista&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;nombre&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_command&nbsp;~label:nombre&nbsp;m;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_separator&nbsp;m;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;proyección&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;var_pr&nbsp;=&nbsp;<span class="constructor">Textvariable</span>.create&nbsp;()&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Textvariable</span>.set&nbsp;var_pr&nbsp;(<span class="keyword">match</span>&nbsp;_proyeccion&nbsp;<span class="keyword">with</span>&nbsp;<span class="constructor">Ortogonal</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="string">"o"</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Perspectiva</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="string">"p"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;mp&nbsp;=&nbsp;<span class="constructor">Menu</span>.create&nbsp;m&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_cascade&nbsp;~label:<span class="string">"Proyección"</span>&nbsp;~menu:mp&nbsp;~underline:0&nbsp;m;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_radiobutton&nbsp;~label:<span class="string">"Ortogonal"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~underline:0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~command:(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;_proyeccion&nbsp;&lt;-&nbsp;<span class="constructor">Ortogonal</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Estado</span>.mostrar&nbsp;(nombre&nbsp;^&nbsp;<span class="string">":&nbsp;proyección&nbsp;ortogonal&nbsp;seleccionada"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.render&nbsp;vista)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~value:<span class="string">"o"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~variable:var_pr<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_radiobutton&nbsp;~label:<span class="string">"Perpectiva"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~underline:0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~command:(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;_proyeccion&nbsp;&lt;-&nbsp;<span class="constructor">Perspectiva</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;corrige&nbsp;el&nbsp;zoom&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self&nbsp;<span class="keywordsign">#</span>&nbsp;set_zoom&nbsp;zoom;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Estado</span>.mostrar&nbsp;(nombre&nbsp;^&nbsp;<span class="string">":&nbsp;proyección&nbsp;perspectiva&nbsp;seleccionada"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.render&nbsp;vista)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~value:<span class="string">"p"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~variable:var_pr<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;sentido&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;var_se&nbsp;=&nbsp;<span class="constructor">Textvariable</span>.create&nbsp;()&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Textvariable</span>.set&nbsp;var_se&nbsp;(<span class="keyword">match</span>&nbsp;_sentido&nbsp;<span class="keyword">with</span>&nbsp;<span class="constructor">Horario</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="string">"h"</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Antihorario</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="string">"a"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;ms&nbsp;=&nbsp;<span class="constructor">Menu</span>.create&nbsp;m&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_cascade&nbsp;~label:<span class="string">"Sentido"</span>&nbsp;~menu:ms&nbsp;~underline:0&nbsp;m;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_radiobutton&nbsp;~label:<span class="string">"Horario"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~underline:0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~command:(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;_sentido&nbsp;&lt;-&nbsp;<span class="constructor">Horario</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Estado</span>.mostrar&nbsp;(nombre&nbsp;^&nbsp;<span class="string">":&nbsp;sentido&nbsp;horario&nbsp;de&nbsp;los&nbsp;vértices&nbsp;marcan&nbsp;la&nbsp;cara&nbsp;exterior&nbsp;seleccionado"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.render&nbsp;vista)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~value:<span class="string">"h"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~variable:var_se<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ms;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_radiobutton&nbsp;~label:<span class="string">"Antihorario"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~underline:0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~command:(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;_sentido&nbsp;&lt;-&nbsp;<span class="constructor">Antihorario</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Estado</span>.mostrar&nbsp;(nombre&nbsp;^&nbsp;<span class="string">":&nbsp;sentido&nbsp;antihorario&nbsp;de&nbsp;los&nbsp;vértices&nbsp;marcan&nbsp;la&nbsp;cara&nbsp;exterior&nbsp;seleccionado"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.render&nbsp;vista)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~value:<span class="string">"a"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~variable:var_se<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ms;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;modo&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;var_mo&nbsp;=&nbsp;<span class="constructor">Textvariable</span>.create&nbsp;()&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Textvariable</span>.set&nbsp;var_mo&nbsp;(<span class="keyword">match</span>&nbsp;_modo&nbsp;<span class="keyword">with</span>&nbsp;<span class="constructor">Solido</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="string">"s"</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Alambrico</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="string">"a"</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Puntos</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="string">"p"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;mm&nbsp;=&nbsp;<span class="constructor">Menu</span>.create&nbsp;m&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_cascade&nbsp;~label:<span class="string">"Modo"</span>&nbsp;~menu:mm&nbsp;~underline:0&nbsp;m;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_radiobutton&nbsp;~label:<span class="string">"Sólido"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~underline:0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~command:(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;_modo&nbsp;&lt;-&nbsp;<span class="constructor">Solido</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Estado</span>.mostrar&nbsp;(nombre&nbsp;^&nbsp;<span class="string">":&nbsp;modo&nbsp;de&nbsp;visualización&nbsp;sólido&nbsp;seleccionado"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.render&nbsp;vista)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~value:<span class="string">"s"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~variable:var_mo<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mm;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_radiobutton&nbsp;~label:<span class="string">"Alámbrico"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~underline:0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~command:(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;_modo&nbsp;&lt;-&nbsp;<span class="constructor">Alambrico</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Estado</span>.mostrar&nbsp;(nombre&nbsp;^&nbsp;<span class="string">":&nbsp;modo&nbsp;de&nbsp;visualización&nbsp;alámbrico&nbsp;seleccionado"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.render&nbsp;vista)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~value:<span class="string">"a"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~variable:var_mo<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mm;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_radiobutton&nbsp;~label:<span class="string">"Puntos"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~underline:0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~command:(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;_modo&nbsp;&lt;-&nbsp;<span class="constructor">Puntos</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Estado</span>.mostrar&nbsp;(nombre&nbsp;^&nbsp;<span class="string">":&nbsp;modo&nbsp;de&nbsp;visualización&nbsp;con&nbsp;puntos&nbsp;seleccionado"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.render&nbsp;vista)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~value:<span class="string">"p"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~variable:var_mo<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mm;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;sombreado&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;var_so&nbsp;=&nbsp;<span class="constructor">Textvariable</span>.create&nbsp;()&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Textvariable</span>.set&nbsp;var_so&nbsp;(<span class="keyword">match</span>&nbsp;_sombreado&nbsp;<span class="keyword">with</span>&nbsp;<span class="constructor">Plano</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="string">"p"</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Suavizado</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="string">"s"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;ms&nbsp;=&nbsp;<span class="constructor">Menu</span>.create&nbsp;m&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_cascade&nbsp;~label:<span class="string">"Sombreado"</span>&nbsp;~menu:ms&nbsp;~underline:1&nbsp;m;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_radiobutton&nbsp;~label:<span class="string">"Plano"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~underline:0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~command:(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;_sombreado&nbsp;&lt;-&nbsp;<span class="constructor">Plano</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Estado</span>.mostrar&nbsp;(nombre&nbsp;^&nbsp;<span class="string">":&nbsp;modelo&nbsp;de&nbsp;sombreado&nbsp;plano&nbsp;seleccionado"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.render&nbsp;vista)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~value:<span class="string">"p"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~variable:var_so<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ms;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_radiobutton&nbsp;~label:<span class="string">"Suavizado"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~underline:0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~command:(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;_sombreado&nbsp;&lt;-&nbsp;<span class="constructor">Suavizado</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Estado</span>.mostrar&nbsp;(nombre&nbsp;^&nbsp;<span class="string">":&nbsp;modelo&nbsp;de&nbsp;sombreado&nbsp;suavizado&nbsp;seleccionado"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.render&nbsp;vista)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~value:<span class="string">"s"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~variable:var_so<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ms;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;normales&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;var_nm&nbsp;=&nbsp;<span class="constructor">Textvariable</span>.create&nbsp;()&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Textvariable</span>.set&nbsp;var_nm&nbsp;(<span class="keyword">match</span>&nbsp;_normales&nbsp;<span class="keyword">with</span>&nbsp;<span class="constructor">Poligono</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="string">"p"</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Vertice</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="string">"v"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;mn&nbsp;=&nbsp;<span class="constructor">Menu</span>.create&nbsp;m&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_cascade&nbsp;~label:<span class="string">"Normales"</span>&nbsp;~menu:mn&nbsp;~underline:0&nbsp;m;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_radiobutton&nbsp;~label:<span class="string">"Polígono"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~underline:0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~command:(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;_normales&nbsp;&lt;-&nbsp;<span class="constructor">Poligono</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Estado</span>.mostrar&nbsp;(nombre&nbsp;^&nbsp;<span class="string">":&nbsp;cálculo&nbsp;de&nbsp;las&nbsp;normales&nbsp;al&nbsp;polígono&nbsp;seleccionado"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.render&nbsp;vista)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~value:<span class="string">"p"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~variable:var_nm<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mn;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_radiobutton&nbsp;~label:<span class="string">"Vértice"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~underline:0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~command:(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;_normales&nbsp;&lt;-&nbsp;<span class="constructor">Vertice</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Estado</span>.mostrar&nbsp;(nombre&nbsp;^&nbsp;<span class="string">":&nbsp;cálculo&nbsp;de&nbsp;las&nbsp;normales&nbsp;al&nbsp;vértice&nbsp;seleccionado"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.render&nbsp;vista)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~value:<span class="string">"v"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~variable:var_nm<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mn;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;z-buffer&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;zb&nbsp;=&nbsp;<span class="constructor">Textvariable</span>.create&nbsp;()&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Textvariable</span>.set&nbsp;zb&nbsp;(<span class="keyword">if</span>&nbsp;_z_buffer&nbsp;<span class="keyword">then</span>&nbsp;<span class="string">"on"</span>&nbsp;<span class="keyword">else</span>&nbsp;<span class="string">"off"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_checkbutton&nbsp;~label:<span class="string">"Z-buffer"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~underline:0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~command:(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;_z_buffer&nbsp;&lt;-&nbsp;(<span class="constructor">Textvariable</span>.get&nbsp;zb&nbsp;=&nbsp;<span class="string">"on"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Estado</span>.mostrar&nbsp;(nombre&nbsp;^&nbsp;<span class="keyword">if</span>&nbsp;_z_buffer&nbsp;<span class="keyword">then</span>&nbsp;<span class="string">":&nbsp;Z-buffer&nbsp;activo"</span>&nbsp;<span class="keyword">else</span>&nbsp;<span class="string">":&nbsp;Z-buffer&nbsp;inactivo"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.render&nbsp;vista)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~onvalue:<span class="string">"on"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~offvalue:<span class="string">"off"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~variable:zb<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;culling&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;cu&nbsp;=&nbsp;<span class="constructor">Textvariable</span>.create&nbsp;()&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Textvariable</span>.set&nbsp;cu&nbsp;(<span class="keyword">if</span>&nbsp;_culling&nbsp;<span class="keyword">then</span>&nbsp;<span class="string">"on"</span>&nbsp;<span class="keyword">else</span>&nbsp;<span class="string">"off"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_checkbutton&nbsp;~label:<span class="string">"Culling"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~underline:0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~command:(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;_culling&nbsp;&lt;-&nbsp;(<span class="constructor">Textvariable</span>.get&nbsp;cu&nbsp;=&nbsp;<span class="string">"on"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Estado</span>.mostrar&nbsp;(nombre&nbsp;^&nbsp;<span class="keyword">if</span>&nbsp;_culling&nbsp;<span class="keyword">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">":&nbsp;eliminación&nbsp;de&nbsp;caras&nbsp;ocultas&nbsp;(culling)&nbsp;activa"</span>&nbsp;<span class="keyword">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">":&nbsp;eliminación&nbsp;de&nbsp;caras&nbsp;ocultas&nbsp;(culling)&nbsp;inactiva"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.render&nbsp;vista)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~onvalue:<span class="string">"on"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~offvalue:<span class="string">"off"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~variable:cu<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;iluminación&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;il&nbsp;=&nbsp;<span class="constructor">Textvariable</span>.create&nbsp;()&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Textvariable</span>.set&nbsp;il&nbsp;(<span class="keyword">if</span>&nbsp;_iluminacion&nbsp;<span class="keyword">then</span>&nbsp;<span class="string">"on"</span>&nbsp;<span class="keyword">else</span>&nbsp;<span class="string">"off"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.add_checkbutton&nbsp;~label:<span class="string">"Iluminación"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~underline:0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~command:(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;_iluminacion&nbsp;&lt;-&nbsp;(<span class="constructor">Textvariable</span>.get&nbsp;il&nbsp;=&nbsp;<span class="string">"on"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Estado</span>.mostrar&nbsp;(nombre&nbsp;^&nbsp;<span class="keyword">if</span>&nbsp;_iluminacion&nbsp;<span class="keyword">then</span>&nbsp;<span class="string">":&nbsp;luz&nbsp;ambiente&nbsp;activa"</span>&nbsp;<span class="keyword">else</span>&nbsp;<span class="string">":&nbsp;luz&nbsp;ambiente&nbsp;inactiva"</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.render&nbsp;vista)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~onvalue:<span class="string">"on"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~offvalue:<span class="string">"off"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~variable:il<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;muestra&nbsp;el&nbsp;popup&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Menu</span>.popup&nbsp;~x&nbsp;~y&nbsp;m;</code></body></html>

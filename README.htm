@@ -1,0 +1,304 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+	<head>
+		<style type="text/css" media="screen">
+			p	{
+				text-align: justify;
+				text-indent: 10pt;
+				margin-right: 5%
+			}
+			b	{
+				color: orange;
+				font-family: verdana, arial, helvetica;
+			}
+			a	{
+				color: #8080c0
+			}
+			code	{
+				background-color: #E0FFE0
+			}
+			h3.warning	{
+				text-decoration: blink;
+				margin-left: 30%;
+				margin-right: 30%;
+				background-color: #FFFFE0;
+				border: 1px dotted #808080;
+				font-size: 80%;
+				padding: 5px
+			}
+			h3.seccion	{
+				font-size: 80%;
+				text-align: center;
+				letter-spacing: 10px;
+				border: 1px solid #C0C0C0;
+				padding: 10px;
+				background-color: #F0F0F0;
+				margin-left: 30px;
+				margin-right: 30px;
+				margin-top: 20pt;
+				display: block
+			}
+		</style>
+		<title>GC - Programación con OpenGL | Manual de la Aplicación</title>
+	</head>
+	<body>
+		<h1 align="center">Gráficos por Computador - Programación con OpenGL</h1>
+		<h2 align="center"><em>MANUAL DE LA APLICACIÓN</em></h1>
+		<h4 align="center"><a href="mailto:jpv14@alu.ua.es">Jesús Pardillo Vela</a>
+			<br><a href="mailto:abm28@alu.ua.es">Arturo Bernal Mayordomo</a></h4>
+		<h3 class="warning" style="text-align:center;color:gray"><em>Para el óptimo
+			funcionamiento se recomienda seguir las indicaciones de instalación</em></h3>
+		<h3 class="seccion">INSTALACIÓN</h3>
+		<ul type="none">
+			<li>
+<p>
+La práctica ha sido desarrollada bajo el sistema operativo <b>Linux</b> con esperanza de portabilidad
+a la plataforma <b>Windows</b>. Esta portabilidad viene garantizada por el entorno con el se ha trabajado:
+el lenguaje de programación <b>Objective Caml</b> (<b>OCaml</b>). Este lenguaje da soporte a ambos sistemas
+operativos con tan sólo	poner como requisito, tener instalado el entorno de ejecución que funciona a modo
+de máquina virtual. Este entorno de ejecución, junto con el resto de utlidades para el desarrollo con
+<b>OCaml</b> puede obtenerse de manera gratuita desde la página	web de la
+<a href="http://caml.inria.fr/ocaml/distrib.html">distribución</a>.
+</p>
+<p>
+A continuación se detallarán los pasos a seguir para poder ejecutar la práctica desarrollada. Estos pasos
+se centrarán en describir cómo debe hacerse la instalación sobre la plataforma <b>Windows</b> ya que es
+la considerada en el enunciado de la práctica. Es por ello, que junto con la distribución de todos los
+archivos del proyecto que configuran la práctica, hemos incluido el archivo ejecutable, ya compilado, para
+la plataforma <b>Windows</b>. La instalación y ejecución en <b>Linux</b>, resultará
+incluso más fácil que la variante en <b>Windows</b>; suponiendo instaladas las bibliotecas necesarias
+(expuestas en el siguiente párrafo), sólo deberemos ejecutar <code>make all</code> desde el intérprete de
+comandos para tener listo el ejecutable.
+</p>
+<p>
+Para poner en marcha el ejecutable de <b>Windows</b> que acompaña la práctica, deberemos tener instalado
+en nuestro sistema <code>3</code> requisitos indispensables:
+</p>
+<ol>
+	<li>La distribución de <b>OCaml</b>: Nos proporcionará las bibliotecas y el entorno de ejecución
+	(<code>ocamlrun</code>).<br/>Descargable en:
+	<a href="http://caml.inria.fr/distrib/ocaml-3.07/ocaml-3.07pl2-win-msvc.exe">OCaml</a></li>
+	<li>La biblioteca <b>LablGL</b> para <b>OCaml</b>: Nos dará soporte para la ejecución de aplicaciones
+	basadas en <b>OpenGL</b>.<br/>Descargable en:
+	<a href="http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/lablgl-1.00-ocamlwin-3.07.zip">LablGL</a></li>
+	<li>La biblioteca <b>Tcl/Tk</b>: necesaria para soportar el entorno gráfico con el que se ha desarrollado
+	la práctica.<br/>Descargable en: <a href="http://www.wagsoft.com/TCL/tcl823.exe">Tcl/Tk</a></li>
+</ol>
+<p>
+En busca de facilitar al máximo la ejecución de la práctica, los archivos requeridos han sido directamente
+incluidos con la distribución del proyecto.
+</p>
+<p>
+Una vez tengamos todos los archivos anteriores, deberemos instalar primero la distribución de <b>OCaml</b>.
+Este paso es directo, pues la propia distribución viene con un instalador para <b>Windows</b>. Tras esto,
+deberemos instalar manualmente la biblioteca <b>LablGL</b> haciendo corresponder los directorios del
+paquete con los directorios de la distribución de <b>OCaml</b> (el directorio <code>LablGL</code> lo deberemos
+situar como subdirectorio del directorio <code>lib</code> de la distribución). Finalmente, haremos lo propio con la
+biblioteca <b>Tcl/Tk</b>: una vez instalada mediante el procedimiento automático, deberemos copiar los subdirectorios
+<code>tcl83</code> y <code>tk83</code> del directorio <code>lib</code> donde hayamos instalado la biblioteca, al
+directorio donde hayamos instalado la distribución de <b>OCaml</b>. Con estos sencillos pasos, deberíamos de ser
+capaces de ejecutar el código de la práctica.
+</p>
+<p>
+Para desintalar las bibliotecas no tendremos más que recurrir a los desintaladores automáticos para la
+distribución de <b>OCaml</b> y de la biblioteca <b>Tcl/TK</b>. Así quedará limpiado completamente todo rastro
+de instalación, con lo que volveremos a tener el entorno como originalmente estuviera.
+</p>
+			</li>
+		</ul>
+		<h3 class="seccion">CARACTERÍSTICAS GENERALES</h3>
+		<ul type="none">
+			<li>
+<p>
+Con ánimo de conseguir unos buenos resultados, hemos implementado todos los requerimientos solicitados en
+el enunciado de la práctica con ampliaciones y detalles adicionales a considerar:
+<ul>
+<li><p>Todos los objetos se representan a través
+de sus correspondientes <em>Display Lists</em>, incluidos sus propios reflejos y sombras, al igual que el
+suelo sobre el que se proyectan.</p></li>
+<li><p>Se han incluido menús contextuales para la alteración de todas las características de
+visualización solicitadas, como puedan ser el tipo de proyección o el tipo de sombreado.</p></li>
+<li><p>Las transformaciones se llevan a cabo bajo sistemas de referencia fijos incluso para el caso problemático de las rotaciones.</p></li>
+<li><p>Los marcadores de las transformaciones no sólo cambian según el tipo de transformación sino también según
+el eje o ejes sobre los que se aplique.</p></li>
+<li><p>Los objetos básicos, materiales y luces de la escena se establecen mediante archivos de configuración
+independientes del código desarrollado, dando la libertad al usuario de elegir las características del entorno
+con las que desea trabajar (tipo de objetos básicos, número y tipo de materiales, etc.).</p></li>
+<li><p>Se soportan luces de <code>3</code> tipos: puntuales, direccionales y focales, en la terminología de <b>OpenGL</b>.</p></li>
+<li><p>Dos mini-editores de polilíneas facilitan la creación de objetos por extrusión y revolución pudiendo
+configurar parámetros como la distancia al eje o los grados a girar para el caso de la revolución. La edición se
+realiza mediante polilíneas con efecto elástico implementadas en <b>OpenGL</b> como proyecciones ortogonales.</p></li>
+<li><p>Las texturas se han implementado siguiendo dos vías alternativas: por un lado, se puede acceder a la información
+en crudo almacenada en los archivos gráficos <b>PNM</b> (que no permiten canal alpha) y por otro lado, a un formato
+propio <b>XML</b> con soporte para los cuatro canales de color en las texturas (la práctica viene acompañada de diversos
+ejemplos de texturas con ambos formatos).</p></li>
+<li><p>Se da la posibilidad de elegir materiales con valores del canal alpha inferiores a <code>1.0</code> para la habilitación
+de las transparencias (<em>blending</em>). Adicionalmente, las transparencias se llevan a cabo tanto sobre la
+superficie del suelo como en los marcadores de las transformaciones en función de los ejes.</p></li>
+<li><p>Se da la opción de habilitar los reflejos sobre el plano del suelo al igual que se permite la generación
+de sombras. En el caso de las sombras, la proyección hereda el grado de transparencia del objeto iluminado.</p></li>
+<li><p>Las sombras se generan en función del tipo de luz que ilumine al objeto, soportando las luces puntuales
+y las luces direccionales con sus respectivos tipos de sombra proyectada. Las luces focales son consideradas como
+puntuales en cuanto a generación de sombras se refiere.</p></li>
+<li><p>Todo archivo manejado por la aplicación, tanto la propia configuración del entorno, como las texturas y los archivos de escena,
+se encuentra definido en <b>XML</b> con su correspondiente <b>DTD</b> con lo que la comprensión de los formatos es inmediata.</p></li>
+<li><p>La mejora más evidente viene de la mano de la inclusión de <code>4</code> cámaras para la visualización de la escena,
+cada una de ellas con sus propios parámetros de configuración. La adaptación de las <em>Display Lists</em> a un entorno
+con múltiples vista no es trivial; la implementación de este sistema sobre el sistema de vista única supone
+toda una revolución tanto en cualidades como en dificultad de implementación. Por todo ello,
+se espera que tal esfuerzo sea reconocido en su justa medida.</p></li>
+</ul>
+</p>
+			</li>
+		</ul>
+		<h3 class="seccion">MANUAL DE USUARIO</h3>
+		<ul type="none">
+<p>
+En la propia aplicación se ha incluido un menú <code>Ayuda</code> con las opciones más características del manejo de la aplicación.
+Sin embargo, ciertos apartados requieren una explicación un tanto más detallada que la proporcionada por este menú.
+</p>
+<p>
+Acerca de las transformaciones, al pulsar sobre el botón correspondiente, ya sea el tipo de transformación o eje sobre el
+que se aplica, el propio software dará información sobre la utilización a través de la barra de estado que se ha
+proporcionado para tal fin. Las transformaciones se aplican pulsando con <code>Mouse1</code> sobre el objeto a transformar
+y, manteniendo pulsado, mover el ratón horizontal o verticalmente (según se informe en la barra de estado) para efectuar
+la transformación. A este ciclo, se le añade la posibilidad de duplicación de objetos en la transformación si, en el
+momento de pulsar <code>Mouse1</code> se mantiene pulsada la tecla <code>Shift</code>, con lo se generará
+un objeto completamente nuevo con la transformación aplicada sobre él. Esta duplicación se puede hacer tanto de los
+objetos que configuran geometrías de la escena como de las luces que la iluminan.
+</p>
+<p>
+Para el trabajo sobre las vistas se han implementado dos métodos adicionales de interacción. Sobre cualquier vista podremos
+pulsar <code>Mouse2</code> para ampliar el espacio que ocupe a todo el espacio reservado para la representación de la escena.
+Las vistas que hayan sido ampliadas, podrán ser reducidas a su tamaño original siguiendo el mismo procedimiento. El segundo
+método para la comunicación con las vistas consiste en la pulsación de <code>Mouse3</code> sobre una vista concreta para
+habilitar el menú contextual con los parámetros de configuración personalizados.
+</p>
+<p>
+Al lado del panel dedicado a las vistas podemos encontrar el panel con las herramientas para crear objetos, materiales y luces.
+Para crear nuevos objetos geométricos podremos seguir dos caminos: el primero sería el de duplicar un objeto ya creado con el
+método comentado arriba, y el otro método sería el crear el objeto a partir del panel de creación lateral. Para crear un objeto
+sólo tendremos que seleccionar el objeto sobre la lista de posibles objetos generables y seleccionar también un material
+para ese objeto en la lista de materiales. Tras esto, pulsando sobre el botón <code>Crear</code> de la sección
+<code>OBJETOS</code> tendremos creado el objeto. En el caso de las luces es todavía más rápido, seleccionaremos la luz a crear
+y pulsaremos sobre el botón correspondiente de la sección <code>LUCES</code>.
+</p>
+<p>
+El panel de creación es configurable mediante archivos de configuración del entorno. Al arrancar la aplicación, se carga
+un archivo de configuración por defecto que se busca en las rutas indicadas en el menú <code>Ayuda</code>. Sin embargo, en cualquier
+momento de la edición de la escena, se puede recurrir al menú <code>Archivo|Abrir...</code> y seleccionar algún otro
+archivo de configuración. Gracias a esta manera de hacer, no se limita al usuario a las primitivas definidas en la configuración
+por defecto, pudiendose crear nuevas configuraciones del entorno con nuevos objetos básicos, nuevos tipos de materiales y
+nuevas luces.
+</p>
+<p>
+En cuanto al mini-editor de polilíneas debemos considerar ciertos aspectos. Las secciones deben definirse dando los vértices
+que la componen en sentido antihorario para que los polígonos generados orienten sus caras frontales hacia el exterior. Estas
+secciones pueden crearse abiertas o cerradas; una sección abierta dejará un espacio hueco desde el que se podrá ver el interior
+del objeto. Los botones del ratón nos ayudarán a definir las secciones:
+<ul>
+	<li><code>Mouse1</code>: para crear un nuevo vértice en la sección</li>
+	<li><code>Mouse2</code>: para eliminar el último vértice de la sección</li>
+	<li><code>Mouse3</code>: para cerrar automáticamente la sección</li>
+</ul>
+</p>
+En el caso del mini-editor para la extrusión, deberemos crear secciones convexas centradas en el origen <code>(u,v)=(0,0)</code>
+para que se defina correctamente el objeto extruido. Para la revolución, deberemos tener en cuenta que el eje de revolución se
+encuentra situado en <code>(u,v)=(-r,0)</code> siendo <code>r</code> el radio establecido. En el caso de generar una revolución
+con <code>r=0</code> deberemos definir la linea generatriz en el lateral izquierdo (respecto al origen) y en sentido anthorario.
+<p>
+</p>
+		</ul>
+		<h3 class="seccion">IMPLEMENTACIÓN</h3>
+		<ul type="none">
+			<li>
+<p>
+En cuanto a los detalles de implementación, pasaremos a exponer brevemente los principales puntos en el desarrollo que a nuestro
+parecer, son los más interesantes de comentar.
+</p>
+<p>
+El proyecto se ha estructurado en la siguiente estructura de directorios:
+<ul>
+	<li><code>bin</code>: donde compilan y residen los binarios</li>
+	<li><code>dev</code>: archivos internos del proceso de desarrollo</li>
+	<li><code>doc</code>: documentación generada a partir del código de la aplicación</li>
+	<li><code>etc</code>: archivos de configuración de la aplicación</li>
+	<li><code>lib</code>: bibliotecas externas incluidas con la distribución</li>
+	<li><code>res</code>: archivos de imagen y texturas</li>
+	<li><code>src</code>: código fuente</li>
+	<li><code>test</code>: archivos de ejemplo</li>
+</ul>
+</p>
+<p>
+Debemos destacar el directorio <code>doc</code> donde se pueden encontrar las referencias a toda la documentación de las
+funciones, objetos y variables utilizadas en la implementación y que se han extraido automáticamente mediante la herramienta
+<code>ocamldoc</code> del mismo código fuente (autodocumentado).
+</p>
+<p>
+El directorio <code>etc</code> es de vital importancia,
+pues en él residen los archivos de los que depende la aplicación para su configuración; está el archivo de configuración
+por defecto del entorno <code>gc.config.xml</code>, la <b>DTD</b> que lo define <code>gc.config.dtd</code> y las <b>DTD</b>
+para la definición de los archivos <b>XML</b> de las escenas y de las texturas. También muy importante, para la evaluación del
+trabajo, es el directorio <code>test</code> donde residen los archivos de ejemplo con los que se podrán apreciar las
+diferentes opciones de configuración.
+</p>
+<p>
+Si bien, toda información de referencia sobre la implementación se puede encontrar en el directorio <code>doc</code>,
+a continuación pasaremos a exponer ciertos puntos que consideramos importantes.
+</p>
+<p>
+Existen <code>3</code> tipos de archivos que es capaz de manejar la aplicación. Uno son los <em>archivos de configuración
+del entorno</em> definidos mediante la <b>DTD</b> <code>gc.config.dtd</code>. Otro son los archivos de definición de texturas
+para los objetos de tipo <code>malla</code> (colección de polígonos) que vienen dados por la <b>DTD</b> <code>textura.dtd</code>.
+Por último, los archivos de definición de escenas con <b>DTD</b> <code>escena.dtd</code>. Cada uno de estos archivos son
+archivos <b>XML</b> definidos mediante <b>DTD</b> por lo que se puede recurrir directamente a la <b>DTD</b> para informarse
+acerca del formato empleado o dirigirse hacia algún archivo concreto de los incluidos en la distribución para observar su
+estructura.
+</p>
+<p>
+Dentro del directorio <code>src</code> tenemos todo el código de la aplicación. El subdirectorio <code>geom</code> contiene
+la jerarquía de clases que definen los objetos geométricos, todos con un antecesor común en la clase <code>dibujable</code>
+que es la encargada de gestionar y almacenar las <em>Display Lists</em> que el objeto distribuye en función de la vista a la
+que pertenezca y de los parámetros de visualización. Debemos recordar que cada vista define su propio contexto de
+<code>OpenGL</code>, con lo cual las <em>Display Lists</em> definidas para una vista no servirán para las otras.
+</p>
+<p>
+En el subdirectorio <code>gui</code> almacenamos todos los detalles que pertenecen al entorno gráfico de usuario: paneles,
+ventanas, vistas, etc. se guardan en él. El subdirectorio <code>misc</code> contiene diferentes funcionalidades requeridas
+por el resto de módulos; conjuntamente con el archivo <code>defs.ml</code> de definición de constantes para la aplicación.
+Con la modificación de este archivo (y la posterior compilación del código) podremos alterar diferentes parámetros que
+afectan a la totalidad de la aplicación, como el color del fondo de las vistas, el espaciado del grid, las equivalencias
+de los pixels en unidades de la escena, etc. Otro archivo interesante es <code>matRot.ml</code> que define una clase para
+las matrices de rotación, requeridas para poder realizar giros sobre sistemas de referencia fijos. En el subdirectorio
+<code>visual</code> encontramos las clases para abstraer las propiedades de cámaras, luces, materiales y texturas.
+</p>
+<p>
+Por último, el subdirectorio <code>kernel</code>, como su nombre indica, guarda los archivos centrales de la aplicación.
+En ellos, se administra la escena así como su entorno, se definen los métodos de representación de los objetos para
+sombras, reflejos y los propios objetos a la vez que se emplazan las funciones de serialización de los datos.
+</p>
+<p>
+Descartando los rasgos más característicos de nuestra implementación como son la gestión de archivos en formato <b>XML</b> o
+la inclusión de un entorno de múltiples vistas, pensamos que un punto de interés adicional radica en el tratamiento de las
+rotaciones: la problemática de las rotaciones en <b>OpenGL</b> radica en la postmultiplicación implícita de las matrices
+que le pasemos. Por ello, un enfoque de implementación en el que se almacenen los ángulos de rotación sobre los ejes <code>X</code>,
+<code>Y</code> y <code>Z</code> para luego aplicar las transformaciones mediante la función <code>glRotate</code> no nos sirve;
+las rotaciones deberán ser <em>encadenadas</em> mediante premultiplicación para luego encargar a <code>OpenGL</code> la
+multiplicación de la matriz de rotación cuando haya que aplicarla. Por ello, en la implementación se manejan matrices para
+la rotación en vez de valores escalares para los giros, obteniendo los correspondientes ángulos cuando se requiera el giro
+o, por ejemplo, cuando se serializan los datos de las mismas. Con ello, podremos asegurar la rotación sobre un sistema de
+referencia fijo, que en nuestro caso corresponde con el sistema de coordenadas global al igual que en el caso de la
+traslación (el escalado se refiere al sistema de coordenadas local del objeto).
+</p>
+<p>
+Como se venía comentando, para cualquier otro detalle de implementación se puede recurrir al directorio <code>doc</code> donde
+reside la documentación de referencia extraida automáticamente del código fuente.
+</p>
+			</li>
+		</ul>
+		<h4 align="right" style="margin-top:30pt;margin-right:10%">
+			<em>Martes 17 de Febrero del 2004</em>
+		</h4>
+	</body>
+</html>

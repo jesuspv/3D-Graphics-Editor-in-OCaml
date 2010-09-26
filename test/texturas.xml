@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE escena SYSTEM "../etc/escena.dtd">
+
+<escena>
+  <visualizacion>
+    <camara nombre="Superior" proyeccion="perspectiva" sentido="antihorario" modo="solido" z-buffer="on" culling="on" sombreado="suavizado" normales="poligono" iluminacion="on">
+      <situacion x="0.10" y="4.02" z="2.48"/>
+      <giro x="-63.10" y="0.00" z="-0.00"/>
+      <zoom factor="0.87"/>
+    </camara>
+    <camara nombre="Anterior" proyeccion="perspectiva" sentido="antihorario" modo="solido" z-buffer="on" culling="on" sombreado="suavizado" normales="poligono" iluminacion="on">
+      <situacion x="-0.85" y="2.40" z="1.71"/>
+      <giro x="-68.20" y="-12.53" z="-46.74"/>
+      <zoom factor="0.54"/>
+    </camara>
+    <camara nombre="Izquierda" proyeccion="perspectiva" sentido="antihorario" modo="solido" z-buffer="on" culling="on" sombreado="suavizado" normales="poligono" iluminacion="on">
+      <situacion x="-2.52" y="1.91" z="0.12"/>
+      <giro x="-93.42" y="-53.57" z="-92.00"/>
+      <zoom factor="0.61"/>
+    </camara>
+    <camara nombre="Perspectiva" proyeccion="perspectiva" sentido="antihorario" modo="solido" z-buffer="on" culling="on" sombreado="suavizado" normales="poligono" iluminacion="on">
+      <situacion x="2.24" y="3.00" z="2.54"/>
+      <giro x="-58.84" y="29.42" z="38.26"/>
+      <zoom factor="1.00"/>
+    </camara>
+  </visualizacion>
+  <iluminacion>
+    <ambiental r="0.15" g="0.15" b="0.15" a="1.00"/>
+    <puntual nombre="Puntual">
+      <atenuacion distancia="lineal" factor="1.00"/>
+      <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+      <difusa r="1.00" g="1.00" b="1.00" a="1.00"/>
+      <ambiente r="1.00" g="1.00" b="1.00" a="1.00"/>
+      <posicion x="0.00" y="1.21" z="-0.00"/>
+    </puntual>
+    <direccional nombre="Solar">
+      <atenuacion distancia="lineal" factor="1.00"/>
+      <especular r="1.00" g="1.00" b="0.90" a="1.00"/>
+      <difusa r="0.80" g="0.80" b="0.70" a="1.00"/>
+      <ambiente r="0.60" g="0.60" b="0.50" a="1.00"/>
+      <posicion x="-0.97" y="0.98" z="0.71"/>
+      <orientacion x="-174.06" y="-70.30" z="-84.40"/>
+    </direccional>
+    <puntual nombre="Bombilla">
+      <atenuacion distancia="lineal" factor="1.00"/>
+      <especular r="1.00" g="1.00" b="0.70" a="1.00"/>
+      <difusa r="0.50" g="0.50" b="0.20" a="1.00"/>
+      <ambiente r="0.50" g="0.50" b="0.20" a="1.00"/>
+      <posicion x="2.75" y="0.00" z="0.00"/>
+    </puntual>
+  </iluminacion>
+  <geometria>
+    <malla nombre="Pirámide">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="-0.50" y="0.50" z="0.00"/>
+        <rotacion x="-0.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <superficie textura="../res/amatista.xml">
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="-0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="1.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+      </superficie>
+    </malla>
+    <malla nombre="Pirámide">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="0.25" y="0.50" z="0.00"/>
+        <rotacion x="-0.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <superficie textura="../res/arcoiris.xml">
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="-0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="1.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+      </superficie>
+    </malla>
+    <malla nombre="Pirámide">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="-1.25" y="0.50" z="-0.75"/>
+        <rotacion x="-0.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <superficie textura="../res/cielo.xml">
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="-0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="1.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+      </superficie>
+    </malla>
+    <malla nombre="Pirámide">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="0.75" y="0.50" z="0.75"/>
+        <rotacion x="-0.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <superficie textura="../res/cuadraditos.xml">
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="-0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="1.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+      </superficie>
+    </malla>
+    <malla nombre="Pirámide">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="-1.25" y="0.50" z="0.00"/>
+        <rotacion x="-0.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <superficie textura="../res/destellos.xml">
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="-0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="1.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+      </superficie>
+    </malla>
+    <malla nombre="Pirámide">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="-0.75" y="0.50" z="0.75"/>
+        <rotacion x="-0.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <superficie textura="../res/espectro-espiral.xml">
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="-0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="1.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+      </superficie>
+    </malla>
+    <malla nombre="Pirámide">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="1.50" y="0.50" z="0.75"/>
+        <rotacion x="-0.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <superficie textura="../res/espectro.xml">
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="-0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="1.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+      </superficie>
+    </malla>
+    <malla nombre="Pirámide">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="0.25" y="0.50" z="-0.75"/>
+        <rotacion x="-0.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <superficie textura="../res/fibras.xml">
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="-0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="1.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+      </superficie>
+    </malla>
+    <malla nombre="Pirámide">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="0.75" y="0.50" z="1.50"/>
+        <rotacion x="-0.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <superficie textura="../res/hielo.xml">
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="-0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="1.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+      </superficie>
+    </malla>
+    <malla nombre="Pirámide">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="0.00" y="0.50" z="1.50"/>
+        <rotacion x="-0.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <superficie textura="../res/leopardo.xml">
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="-0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="1.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+      </superficie>
+    </malla>
+    <malla nombre="Pirámide">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="-0.50" y="0.50" z="-0.75"/>
+        <rotacion x="-0.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <superficie textura="../res/lluvia.xml">
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="-0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="1.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+      </superficie>
+    </malla>
+    <malla nombre="Pirámide">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="1.00" y="0.50" z="0.00"/>
+        <rotacion x="-0.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <superficie textura="../res/madera.xml">
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="-0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="1.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+      </superficie>
+    </malla>
+    <malla nombre="Pirámide">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="-1.50" y="0.50" z="0.75"/>
+        <rotacion x="-0.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <superficie textura="../res/marmol.xml">
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="-0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="1.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+      </superficie>
+    </malla>
+    <malla nombre="Pirámide">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="-0.75" y="0.50" z="1.50"/>
+        <rotacion x="-0.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <superficie textura="../res/ojo.xml">
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="-0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="1.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+      </superficie>
+    </malla>
+    <malla nombre="Pirámide">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="1.50" y="0.50" z="1.50"/>
+        <rotacion x="-0.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <superficie textura="../res/papel.xml">
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="-0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="1.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+      </superficie>
+    </malla>
+    <malla nombre="Pirámide">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="0.00" y="0.50" z="0.75"/>
+        <rotacion x="-0.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <superficie textura="../res/pastel.xml">
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="-0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="1.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+      </superficie>
+    </malla>
+  </geometria>
+</escena>

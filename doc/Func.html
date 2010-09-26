@@ -1,0 +1,110 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Defs.html">
+<link rel="next" href="MatRot.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Estado" rel="Chapter" href="Estado.html">
+<link title="Herramientas" rel="Chapter" href="Herramientas.html">
+<link title="Menus" rel="Chapter" href="Menus.html">
+<link title="Vistas" rel="Chapter" href="Vistas.html">
+<link title="Entorno" rel="Chapter" href="Entorno.html">
+<link title="Escena" rel="Chapter" href="Escena.html">
+<link title="Suelo" rel="Chapter" href="Suelo.html">
+<link title="Cilindro" rel="Chapter" href="Cilindro.html">
+<link title="Cono" rel="Chapter" href="Cono.html">
+<link title="Cubo" rel="Chapter" href="Cubo.html">
+<link title="Dibujable" rel="Chapter" href="Dibujable.html">
+<link title="Disco" rel="Chapter" href="Disco.html">
+<link title="Esfera" rel="Chapter" href="Esfera.html">
+<link title="Extrusion" rel="Chapter" href="Extrusion.html">
+<link title="Malla" rel="Chapter" href="Malla.html">
+<link title="Revolucion" rel="Chapter" href="Revolucion.html">
+<link title="Toro" rel="Chapter" href="Toro.html">
+<link title="Transformacion" rel="Chapter" href="Transformacion.html">
+<link title="Editor" rel="Chapter" href="Editor.html">
+<link title="Ventana" rel="Chapter" href="Ventana.html">
+<link title="Reflejos" rel="Chapter" href="Reflejos.html">
+<link title="Sombras" rel="Chapter" href="Sombras.html">
+<link title="XmlMarshal" rel="Chapter" href="XmlMarshal.html">
+<link title="Constructor" rel="Chapter" href="Constructor.html">
+<link title="Defs" rel="Chapter" href="Defs.html">
+<link title="Func" rel="Chapter" href="Func.html">
+<link title="MatRot" rel="Chapter" href="MatRot.html">
+<link title="Serializable" rel="Chapter" href="Serializable.html">
+<link title="Camara" rel="Chapter" href="Camara.html">
+<link title="Luz" rel="Chapter" href="Luz.html">
+<link title="Material" rel="Chapter" href="Material.html">
+<link title="Textura" rel="Chapter" href="Textura.html"><title>Func</title>
+</head>
+<body>
+<div class="navbar"><a href="Defs.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="MatRot.html">Next</a>
+</div>
+<center><h1>Module <a href="type_Func.html">Func</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Func: <code class="type">sig  end</code></pre><div class="info">
+Funciones de utilidad<br>
+</div>
+<hr width="100%">
+<pre><span class="keyword">val</span> <a name="VALgrd2rad"></a><a href="code_VALFunc.grd2rad.html">grd2rad</a> : <code class="type">float -> float</code></pre><div class="info">
+Conversión de grados a radianes<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALrad2grd"></a><a href="code_VALFunc.rad2grd.html">rad2grd</a> : <code class="type">float -> float</code></pre><div class="info">
+Conversión de radianes a grados<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALprint_v"></a><a href="code_VALFunc.print_v.html">print_v</a> : <code class="type">float * float * float -> unit</code></pre><div class="info">
+Imprime un vector<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALprint_m"></a><a href="code_VALFunc.print_m.html">print_m</a> : <code class="type">GlMat.t -> unit</code></pre><div class="info">
+Imprime una matriz<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALnormalizar2"></a><a href="code_VALFunc.normalizar2.html">normalizar2</a> : <code class="type">Gl.point2 -> Gl.point2</code></pre><div class="info">
+Normaliza el vector 2D<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALnormalizar3"></a><a href="code_VALFunc.normalizar3.html">normalizar3</a> : <code class="type">Gl.vect3 -> Gl.vect3</code></pre><div class="info">
+Normaliza el vector 3D<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALvectorial_v"></a><a href="code_VALFunc.vectorial_v.html">vectorial_v</a> : <code class="type">Gl.vect3 -> Gl.vect3 -> Gl.vect3</code></pre><div class="info">
+<code class="code"><span class="constructor">Func</span>.vectorial_v v1 v2</code>Obtiene el vector perpendical a otros dos.
+    El sentido de la normal viene dado por la regla de la mano derecha desde
+    v1 hacia v2.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALvectorial_p"></a><a href="code_VALFunc.vectorial_p.html">vectorial_p</a> : <code class="type">Gl.point3 -> Gl.point3 -> Gl.point3 -> Gl.vect3</code></pre><div class="info">
+Obtiene el vector perpendical a otros dos dados.
+    El sentido de la normal viene dado por la regla de la mano derecha desde
+    v0v1 hacia v0v2.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALget_color_union"></a><a href="code_VALFunc.get_color_union.html">get_color_union</a> : <code class="type">[ `X | `Y | `Z ] list -> Gl.vect3</code></pre><div class="info">
+Obtiene el color de la unión de los ejes dados<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALget_mr3"></a><a href="code_VALFunc.get_mr3.html">get_mr3</a> : <code class="type">Gl.vect3 -> GlMat.t</code></pre><div class="info">
+Genera la matriz de rotación correspondiente a los ángulos de euler dados<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALget_mt3"></a><a href="code_VALFunc.get_mt3.html">get_mt3</a> : <code class="type">Gl.vect3 -> GlMat.t</code></pre><div class="info">
+Genera la matriz de traslación<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALget_ms3"></a><a href="code_VALFunc.get_ms3.html">get_ms3</a> : <code class="type">Gl.vect3 -> GlMat.t</code></pre><div class="info">
+Genera la matriz de escalado<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALget_traspuesta"></a><a href="code_VALFunc.get_traspuesta.html">get_traspuesta</a> : <code class="type">GlMat.t -> GlMat.t</code></pre><div class="info">
+Obtiene la matriz traspuesta de una matriz<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALmult_mv"></a><a href="code_VALFunc.mult_mv.html">mult_mv</a> : <code class="type">GlMat.t -> Gl.vect3 -> Gl.vect3</code></pre><pre><span class="keyword">val</span> <a name="VALdibujar_marcador_traslacion"></a><a href="code_VALFunc.dibujar_marcador_traslacion.html">dibujar_marcador_traslacion</a> : <code class="type">[ `X | `Y | `Z ] list -> float -> unit</code></pre><div class="info">
+Dibuja el marcador de la traslación<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALdibujar_marcador_rotacion"></a><a href="code_VALFunc.dibujar_marcador_rotacion.html">dibujar_marcador_rotacion</a> : <code class="type">[ `X | `Y | `Z ] list -> float -> unit</code></pre><div class="info">
+Dibuja el marcador de la rotación<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALdibujar_marcador_escalado"></a><a href="code_VALFunc.dibujar_marcador_escalado.html">dibujar_marcador_escalado</a> : <code class="type">[ `X | `Y | `Z ] list -> Gl.vect3 -> unit</code></pre><div class="info">
+Dibuja el marcador del escalado<br>
+</div>
+</body></html>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE escena SYSTEM "../etc/escena.dtd">
+
+<escena>
+  <visualizacion>
+    <camara nombre="Superior" proyeccion="ortogonal" sentido="antihorario" modo="alambrico" z-buffer="on" culling="off" sombreado="plano" normales="poligono" iluminacion="off">
+      <situacion x="0.00" y="1.00" z="0.00"/>
+      <giro x="-90.00" y="0.00" z="-0.00"/>
+      <zoom factor="1.00"/>
+    </camara>
+    <camara nombre="Anterior" proyeccion="ortogonal" sentido="antihorario" modo="alambrico" z-buffer="on" culling="off" sombreado="plano" normales="poligono" iluminacion="off">
+      <situacion x="0.00" y="0.00" z="1.00"/>
+      <giro x="-0.00" y="0.00" z="-0.00"/>
+      <zoom factor="1.00"/>
+    </camara>
+    <camara nombre="Izquierda" proyeccion="ortogonal" sentido="antihorario" modo="alambrico" z-buffer="on" culling="off" sombreado="plano" normales="poligono" iluminacion="off">
+      <situacion x="-1.00" y="0.00" z="0.00"/>
+      <giro x="0.00" y="-90.00" z="0.00"/>
+      <zoom factor="1.00"/>
+    </camara>
+    <camara nombre="Perspectiva" proyeccion="perspectiva" sentido="antihorario" modo="solido" z-buffer="on" culling="on" sombreado="suavizado" normales="vertice" iluminacion="on">
+      <situacion x="1.81" y="3.00" z="1.72"/>
+      <giro x="-57.05" y="27.35" z="34.50"/>
+      <zoom factor="1.00"/>
+    </camara>
+  </visualizacion>
+  <iluminacion>
+    <ambiental r="0.15" g="0.15" b="0.15" a="1.00"/>
+    <puntual nombre="Luz Clave">
+      <atenuacion distancia="lineal" factor="1.00"/>
+      <especular r="1.00" g="0.80" b="0.80" a="1.00"/>
+      <difusa r="0.80" g="0.60" b="0.60" a="1.00"/>
+      <ambiente r="0.40" g="0.20" b="0.20" a="1.00"/>
+      <posicion x="1.40" y="1.00" z="0.00"/>
+    </puntual>
+    <puntual nombre="Luz de Relleno">
+      <atenuacion distancia="lineal" factor="1.00"/>
+      <especular r="0.40" g="0.40" b="0.60" a="1.00"/>
+      <difusa r="0.20" g="0.20" b="0.40" a="1.00"/>
+      <ambiente r="0.10" g="0.10" b="0.20" a="1.00"/>
+      <posicion x="0.00" y="0.50" z="1.14"/>
+    </puntual>
+    <puntual nombre="Bombilla">
+      <atenuacion distancia="lineal" factor="1.00"/>
+      <especular r="0.80" g="1.00" b="0.80" a="1.00"/>
+      <difusa r="0.30" g="0.50" b="0.30" a="1.00"/>
+      <ambiente r="0.30" g="0.50" b="0.30" a="1.00"/>
+      <posicion x="0.00" y="0.23" z="0.00"/>
+    </puntual>
+    <direccional nombre="Solar">
+      <atenuacion distancia="lineal" factor="1.00"/>
+      <especular r="1.00" g="1.00" b="0.90" a="1.00"/>
+      <difusa r="0.80" g="0.80" b="0.70" a="1.00"/>
+      <ambiente r="0.60" g="0.60" b="0.50" a="1.00"/>
+      <posicion x="-0.50" y="1.05" z="0.76"/>
+      <orientacion x="-133.42" y="-75.05" z="45.59"/>
+    </direccional>
+  </iluminacion>
+  <geometria>
+    <toro nombre="Toro" interior="0.10" exterior="0.50" grados="360.00" meridianos="32" paralelos="16">
+      <material nombre="Blanco">
+        <brillo factor="35.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.20" g="0.20" b="0.20" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="0.00" y="0.00" z="0.00"/>
+        <rotacion x="0.00" y="-90.00" z="0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+    </toro>
+    <toro nombre="Toro" interior="0.20" exterior="0.50" grados="270.00" meridianos="32" paralelos="16">
+      <material nombre="Rojo">
+        <brillo factor="35.00"/>
+        <especular r="1.00" g="0.00" b="0.00" a="1.00"/>
+        <difuso r="0.90" g="0.00" b="0.00" a="1.00"/>
+        <ambiente r="0.20" g="0.00" b="0.00" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="0.00" y="0.00" z="0.00"/>
+        <rotacion x="0.00" y="-90.00" z="0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+    </toro>
+    <toro nombre="Toro" interior="0.30" exterior="0.50" grados="180.00" meridianos="32" paralelos="16">
+      <material nombre="Verde">
+        <brillo factor="35.00"/>
+        <especular r="0.00" g="1.00" b="0.00" a="1.00"/>
+        <difuso r="0.00" g="0.90" b="0.00" a="1.00"/>
+        <ambiente r="0.00" g="0.20" b="0.00" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="0.00" y="0.00" z="0.00"/>
+        <rotacion x="-180.00" y="-45.00" z="-180.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+    </toro>
+    <toro nombre="Toro" interior="0.40" exterior="0.50" grados="90.00" meridianos="32" paralelos="16">
+      <material nombre="Azul">
+        <brillo factor="35.00"/>
+        <especular r="0.00" g="0.00" b="1.00" a="1.00"/>
+        <difuso r="0.00" g="0.00" b="0.90" a="1.00"/>
+        <ambiente r="0.00" g="0.00" b="0.20" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="0.00" y="0.00" z="0.00"/>
+        <rotacion x="-180.00" y="0.00" z="-180.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+    </toro>
+  </geometria>
+</escena>

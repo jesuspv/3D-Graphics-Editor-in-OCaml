@@ -1,0 +1,184 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Serializable.html">
+<link rel="next" href="Luz.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Estado" rel="Chapter" href="Estado.html">
+<link title="Herramientas" rel="Chapter" href="Herramientas.html">
+<link title="Menus" rel="Chapter" href="Menus.html">
+<link title="Vistas" rel="Chapter" href="Vistas.html">
+<link title="Entorno" rel="Chapter" href="Entorno.html">
+<link title="Escena" rel="Chapter" href="Escena.html">
+<link title="Suelo" rel="Chapter" href="Suelo.html">
+<link title="Cilindro" rel="Chapter" href="Cilindro.html">
+<link title="Cono" rel="Chapter" href="Cono.html">
+<link title="Cubo" rel="Chapter" href="Cubo.html">
+<link title="Dibujable" rel="Chapter" href="Dibujable.html">
+<link title="Disco" rel="Chapter" href="Disco.html">
+<link title="Esfera" rel="Chapter" href="Esfera.html">
+<link title="Extrusion" rel="Chapter" href="Extrusion.html">
+<link title="Malla" rel="Chapter" href="Malla.html">
+<link title="Revolucion" rel="Chapter" href="Revolucion.html">
+<link title="Toro" rel="Chapter" href="Toro.html">
+<link title="Transformacion" rel="Chapter" href="Transformacion.html">
+<link title="Editor" rel="Chapter" href="Editor.html">
+<link title="Ventana" rel="Chapter" href="Ventana.html">
+<link title="Reflejos" rel="Chapter" href="Reflejos.html">
+<link title="Sombras" rel="Chapter" href="Sombras.html">
+<link title="XmlMarshal" rel="Chapter" href="XmlMarshal.html">
+<link title="Constructor" rel="Chapter" href="Constructor.html">
+<link title="Defs" rel="Chapter" href="Defs.html">
+<link title="Func" rel="Chapter" href="Func.html">
+<link title="MatRot" rel="Chapter" href="MatRot.html">
+<link title="Serializable" rel="Chapter" href="Serializable.html">
+<link title="Camara" rel="Chapter" href="Camara.html">
+<link title="Luz" rel="Chapter" href="Luz.html">
+<link title="Material" rel="Chapter" href="Material.html">
+<link title="Textura" rel="Chapter" href="Textura.html"><title>Camara</title>
+</head>
+<body>
+<div class="navbar"><a href="Serializable.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="Luz.html">Next</a>
+</div>
+<center><h1>Module <a href="type_Camara.html">Camara</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Camara: <code class="type">sig  end</code></pre><div class="info">
+Clase <code class="code">mat_rot</code><br>
+</div>
+<hr width="100%">
+<br>
+Clase <code class="code">mat_rot</code><br><br>
+<br>
+Clase <code class="code">serializable</code><br><br>
+<br><code><span class="keyword">type</span> <a name="TYPEproyeccion"></a><code class="type"></code>proyeccion = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Ortogonal</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Perspectiva</span></code></td>
+
+</tr></table>
+
+<div class="info">
+Tipo de proyección<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEsentido"></a><code class="type"></code>sentido = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Horario</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Antihorario</span></code></td>
+
+</tr></table>
+
+<div class="info">
+Sentido en que los vértices marcan la cara frontal<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEmodo"></a><code class="type"></code>modo = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Solido</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Alambrico</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Puntos</span></code></td>
+
+</tr></table>
+
+<div class="info">
+Modo de visualización de los polígonos<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEsombreado"></a><code class="type"></code>sombreado = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Plano</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Suavizado</span></code></td>
+
+</tr></table>
+
+<div class="info">
+Modelo de sombreado<br>
+</div>
+
+<br><code><span class="keyword">type</span> <a name="TYPEnormales"></a><code class="type"></code>normales = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Poligono</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">Vertice</span></code></td>
+
+</tr></table>
+
+<div class="info">
+Cálculo de las normales a los polígonos<br>
+</div>
+
+<pre><span class="keyword">class</span> <a name="TYPEcamara"></a><a href="Camara.camara.html">camara</a> : <code class="type">Xml.xml -> object  end</code></pre><div class="info">
+Cámara
+</div>
+<pre><span class="keyword">val</span> <a name="VALget_camara_superior"></a><a href="code_VALCamara.get_camara_superior.html">get_camara_superior</a> : <code class="type">unit -> <a href="Camara.camara.html">camara</a></code></pre><div class="info">
+Obtiene una cámara por defecto para la vista superior<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALget_camara_anterior"></a><a href="code_VALCamara.get_camara_anterior.html">get_camara_anterior</a> : <code class="type">unit -> <a href="Camara.camara.html">camara</a></code></pre><div class="info">
+Obtiene una cámara por defecto para la vista anterior<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALget_camara_izquierda"></a><a href="code_VALCamara.get_camara_izquierda.html">get_camara_izquierda</a> : <code class="type">unit -> <a href="Camara.camara.html">camara</a></code></pre><div class="info">
+Obtiene una cámara por defecto para la vista izquierda<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALget_camara_perspectiva"></a><a href="code_VALCamara.get_camara_perspectiva.html">get_camara_perspectiva</a> : <code class="type">unit -> <a href="Camara.camara.html">camara</a></code></pre><div class="info">
+Obtiene una cámara por defecto para la vista perspectiva<br>
+</div>
+</body></html>

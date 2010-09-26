@@ -1,0 +1,146 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Estado" rel="Chapter" href="Estado.html">
+<link title="Herramientas" rel="Chapter" href="Herramientas.html">
+<link title="Menus" rel="Chapter" href="Menus.html">
+<link title="Vistas" rel="Chapter" href="Vistas.html">
+<link title="Entorno" rel="Chapter" href="Entorno.html">
+<link title="Escena" rel="Chapter" href="Escena.html">
+<link title="Suelo" rel="Chapter" href="Suelo.html">
+<link title="Cilindro" rel="Chapter" href="Cilindro.html">
+<link title="Cono" rel="Chapter" href="Cono.html">
+<link title="Cubo" rel="Chapter" href="Cubo.html">
+<link title="Dibujable" rel="Chapter" href="Dibujable.html">
+<link title="Disco" rel="Chapter" href="Disco.html">
+<link title="Esfera" rel="Chapter" href="Esfera.html">
+<link title="Extrusion" rel="Chapter" href="Extrusion.html">
+<link title="Malla" rel="Chapter" href="Malla.html">
+<link title="Revolucion" rel="Chapter" href="Revolucion.html">
+<link title="Toro" rel="Chapter" href="Toro.html">
+<link title="Transformacion" rel="Chapter" href="Transformacion.html">
+<link title="Editor" rel="Chapter" href="Editor.html">
+<link title="Ventana" rel="Chapter" href="Ventana.html">
+<link title="Reflejos" rel="Chapter" href="Reflejos.html">
+<link title="Sombras" rel="Chapter" href="Sombras.html">
+<link title="XmlMarshal" rel="Chapter" href="XmlMarshal.html">
+<link title="Constructor" rel="Chapter" href="Constructor.html">
+<link title="Defs" rel="Chapter" href="Defs.html">
+<link title="Func" rel="Chapter" href="Func.html">
+<link title="MatRot" rel="Chapter" href="MatRot.html">
+<link title="Serializable" rel="Chapter" href="Serializable.html">
+<link title="Camara" rel="Chapter" href="Camara.html">
+<link title="Luz" rel="Chapter" href="Luz.html">
+<link title="Material" rel="Chapter" href="Material.html">
+<link title="Textura" rel="Chapter" href="Textura.html"><title>Reflejos.dibujar</title>
+</head>
+<body>
+<code class="code"><span class="keyword">let</span>&nbsp;dibujar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~(cam&nbsp;:&nbsp;<span class="constructor">Camara</span>.camara)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~(objs&nbsp;:&nbsp;<span class="constructor">Dibujable</span>.dibujable&nbsp;list)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~(luces&nbsp;:&nbsp;<span class="constructor">Luz</span>.luz&nbsp;list)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~(sentido&nbsp;:&nbsp;[<span class="keywordsign">`</span><span class="constructor">Horario</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Antihorario</span>])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~(vista&nbsp;:&nbsp;<span class="constructor">Togl</span>.widget)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~(indice&nbsp;:&nbsp;int)&nbsp;:&nbsp;unit&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlMisc</span>.push_attrib&nbsp;[<span class="keywordsign">`</span>depth_buffer];<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlMisc</span>.push_attrib&nbsp;[<span class="keywordsign">`</span>stencil_buffer];<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlMisc</span>.push_attrib&nbsp;[<span class="keywordsign">`</span>color_buffer];<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlMisc</span>.push_attrib&nbsp;[<span class="keywordsign">`</span>lighting];<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlMisc</span>.push_attrib&nbsp;[<span class="keywordsign">`</span>polygon];<br>
+<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlClear</span>.stencil&nbsp;0;<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlClear</span>.clear&nbsp;[<span class="keywordsign">`</span>stencil];<br>
+<br>
+&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;marca&nbsp;el&nbsp;stencil&nbsp;buffer&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlFunc</span>.color_mask&nbsp;~red:<span class="keyword">false</span>&nbsp;~green:<span class="keyword">false</span>&nbsp;~blue:<span class="keyword">false</span>&nbsp;~alpha:<span class="keyword">false</span>&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">Gl</span>.enable&nbsp;<span class="keywordsign">`</span>stencil_test;<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlFunc</span>.stencil_func&nbsp;<span class="keywordsign">`</span>always&nbsp;~ref:1&nbsp;~mask:1;<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlFunc</span>.stencil_op&nbsp;~fail:<span class="keywordsign">`</span>keep&nbsp;~zfail:<span class="keywordsign">`</span>keep&nbsp;~zpass:<span class="keywordsign">`</span>replace&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">Gl</span>.disable&nbsp;<span class="keywordsign">`</span>depth_test;<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.make_current&nbsp;vista;<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">Suelo</span>.call_display_list_solido&nbsp;indice;<br>
+&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">Gl</span>.enable&nbsp;<span class="keywordsign">`</span>depth_test;<br>
+<br>
+&nbsp;&nbsp;&nbsp;</code><table><tr><td>&nbsp;&nbsp;&nbsp;</td><td><span class="comment">(** preparamos el dibujado de los reflejos *)</span></td></tr></table><code class="code"><br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlFunc</span>.color_mask&nbsp;~red:<span class="keyword">true</span>&nbsp;~green:<span class="keyword">true</span>&nbsp;~blue:<span class="keyword">true</span>&nbsp;~alpha:<span class="keyword">true</span>&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlFunc</span>.stencil_func&nbsp;<span class="keywordsign">`</span>equal&nbsp;~ref:1&nbsp;~mask:1;<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlFunc</span>.stencil_op&nbsp;~fail:<span class="keywordsign">`</span>keep&nbsp;~zfail:<span class="keywordsign">`</span>keep&nbsp;~zpass:<span class="keywordsign">`</span>keep&nbsp;();<br>
+<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">Gl</span>.enable&nbsp;<span class="keywordsign">`</span>clip_plane0;<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlMisc</span>.clip_plane&nbsp;~plane:0&nbsp;(0.0,&nbsp;-1.0,&nbsp;0.0,&nbsp;0.0);<br>
+<br>
+&nbsp;&nbsp;&nbsp;<span class="comment">(*<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Dibuja&nbsp;los&nbsp;reflejos<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.push&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.scale3&nbsp;(1.0,&nbsp;-1.0,&nbsp;1.0);<br>
+<br>
+&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;variable&nbsp;para&nbsp;corregir&nbsp;el&nbsp;pintado&nbsp;de&nbsp;la&nbsp;cara&nbsp;correcta&nbsp;en&nbsp;el&nbsp;reflejo&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;cara&nbsp;=&nbsp;ref&nbsp;<span class="keywordsign">`</span>front&nbsp;<span class="keyword">in</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;invierte&nbsp;el&nbsp;sentido&nbsp;de&nbsp;las&nbsp;normales&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;(<span class="keyword">match</span>&nbsp;sentido&nbsp;<span class="keyword">with</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">`</span><span class="constructor">Horario</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">GlDraw</span>.front_face&nbsp;<span class="keywordsign">`</span>ccw;&nbsp;<span class="constructor">GlDraw</span>.cull_face&nbsp;<span class="keywordsign">`</span>front;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;<span class="constructor">Gl</span>.is_enabled&nbsp;<span class="keywordsign">`</span>cull_face&nbsp;<span class="keyword">then</span>&nbsp;cara&nbsp;:=&nbsp;<span class="keywordsign">`</span>back;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Antihorario</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">GlDraw</span>.front_face&nbsp;<span class="keywordsign">`</span>cw;&nbsp;<span class="constructor">GlDraw</span>.cull_face&nbsp;<span class="keywordsign">`</span>back);<br>
+<br>
+&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;habilita&nbsp;la&nbsp;iluminación&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">List</span>.iter&nbsp;(<span class="keyword">fun</span>&nbsp;luz&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;luz&nbsp;<span class="keywordsign">#</span>&nbsp;encender)&nbsp;luces;<br>
+&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;obtiene&nbsp;dos&nbsp;particiones&nbsp;con&nbsp;los&nbsp;objetos&nbsp;opacos&nbsp;y&nbsp;los&nbsp;transparentes&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;obj_opacos,&nbsp;obj_transp&nbsp;=&nbsp;<span class="constructor">List</span>.partition&nbsp;(<span class="keyword">fun</span>&nbsp;obj&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;obj&nbsp;<span class="keywordsign">#</span>&nbsp;get_material&nbsp;<span class="keywordsign">#</span>&nbsp;es_opaco)&nbsp;objs<br>
+&nbsp;&nbsp;&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;dibuja&nbsp;los&nbsp;objetos&nbsp;opacos&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">List</span>.iter<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">fun</span>&nbsp;(obj&nbsp;:&nbsp;<span class="constructor">Dibujable</span>.dibujable)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.push&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.translate3&nbsp;obj&nbsp;<span class="keywordsign">#</span>&nbsp;get_t;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.rotate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~angle:obj&nbsp;<span class="keywordsign">#</span>&nbsp;get_rx&nbsp;~x:1.0&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.rotate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~angle:obj&nbsp;<span class="keywordsign">#</span>&nbsp;get_ry&nbsp;~y:1.0&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.rotate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~angle:obj&nbsp;<span class="keywordsign">#</span>&nbsp;get_rz&nbsp;~z:1.0&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.scale3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj&nbsp;<span class="keywordsign">#</span>&nbsp;get_s;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.make_current&nbsp;vista;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj&nbsp;<span class="keywordsign">#</span>&nbsp;call_display_list&nbsp;indice&nbsp;~normales:cam&nbsp;<span class="keywordsign">#</span>&nbsp;get_normales&nbsp;~cara:!cara&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.pop&nbsp;())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj_opacos;<br>
+&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;dibuja&nbsp;los&nbsp;objetos&nbsp;transparentes&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlFunc</span>.depth_mask&nbsp;<span class="keyword">false</span>;&nbsp;<span class="comment">(*&nbsp;Z-buffer&nbsp;sólo&nbsp;lectura&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">List</span>.iter<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">fun</span>&nbsp;(obj&nbsp;:&nbsp;<span class="constructor">Dibujable</span>.dibujable)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.push&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.translate3&nbsp;obj&nbsp;<span class="keywordsign">#</span>&nbsp;get_t;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.rotate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~angle:obj&nbsp;<span class="keywordsign">#</span>&nbsp;get_rx&nbsp;~x:1.0&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.rotate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~angle:obj&nbsp;<span class="keywordsign">#</span>&nbsp;get_ry&nbsp;~y:1.0&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.rotate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~angle:obj&nbsp;<span class="keywordsign">#</span>&nbsp;get_rz&nbsp;~z:1.0&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.scale3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj&nbsp;<span class="keywordsign">#</span>&nbsp;get_s;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.make_current&nbsp;vista;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj&nbsp;<span class="keywordsign">#</span>&nbsp;call_display_list&nbsp;indice&nbsp;~normales:cam&nbsp;<span class="keywordsign">#</span>&nbsp;get_normales&nbsp;~cara:!cara&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.pop&nbsp;())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj_transp;<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlFunc</span>.depth_mask&nbsp;<span class="keyword">true</span>;&nbsp;<span class="comment">(*&nbsp;Z-buffer&nbsp;lectura/escritura&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;deshabilita&nbsp;la&nbsp;iluminación&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">List</span>.iter&nbsp;(<span class="keyword">fun</span>&nbsp;luz&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;luz&nbsp;<span class="keywordsign">#</span>&nbsp;apagar)&nbsp;luces;<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlMat</span>.pop&nbsp;();<br>
+<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">Gl</span>.disable&nbsp;<span class="keywordsign">`</span>clip_plane0;<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">Gl</span>.disable&nbsp;<span class="keywordsign">`</span>stencil_test;<br>
+<br>
+&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;dibujamos&nbsp;el&nbsp;suelo&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">Gl</span>.disable&nbsp;<span class="keywordsign">`</span>lighting;<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">Gl</span>.enable&nbsp;<span class="keywordsign">`</span>blend;<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlFunc</span>.blend_func&nbsp;~src:<span class="keywordsign">`</span>src_alpha&nbsp;~dst:<span class="keywordsign">`</span>one_minus_src_alpha;<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">Togl</span>.make_current&nbsp;vista;<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">Suelo</span>.call_display_list_solido&nbsp;indice;<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">Gl</span>.disable&nbsp;<span class="keywordsign">`</span>blend;<br>
+<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlMisc</span>.pop_attrib&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlMisc</span>.pop_attrib&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlMisc</span>.pop_attrib&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlMisc</span>.pop_attrib&nbsp;();<br>
+&nbsp;&nbsp;&nbsp;<span class="constructor">GlMisc</span>.pop_attrib&nbsp;()</code></body></html>

@@ -1,0 +1,102 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="Start" href="index.html">
+<link rel="Up" href="Transformacion.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Estado" rel="Chapter" href="Estado.html">
+<link title="Herramientas" rel="Chapter" href="Herramientas.html">
+<link title="Menus" rel="Chapter" href="Menus.html">
+<link title="Vistas" rel="Chapter" href="Vistas.html">
+<link title="Entorno" rel="Chapter" href="Entorno.html">
+<link title="Escena" rel="Chapter" href="Escena.html">
+<link title="Suelo" rel="Chapter" href="Suelo.html">
+<link title="Cilindro" rel="Chapter" href="Cilindro.html">
+<link title="Cono" rel="Chapter" href="Cono.html">
+<link title="Cubo" rel="Chapter" href="Cubo.html">
+<link title="Dibujable" rel="Chapter" href="Dibujable.html">
+<link title="Disco" rel="Chapter" href="Disco.html">
+<link title="Esfera" rel="Chapter" href="Esfera.html">
+<link title="Extrusion" rel="Chapter" href="Extrusion.html">
+<link title="Malla" rel="Chapter" href="Malla.html">
+<link title="Revolucion" rel="Chapter" href="Revolucion.html">
+<link title="Toro" rel="Chapter" href="Toro.html">
+<link title="Transformacion" rel="Chapter" href="Transformacion.html">
+<link title="Editor" rel="Chapter" href="Editor.html">
+<link title="Ventana" rel="Chapter" href="Ventana.html">
+<link title="Reflejos" rel="Chapter" href="Reflejos.html">
+<link title="Sombras" rel="Chapter" href="Sombras.html">
+<link title="XmlMarshal" rel="Chapter" href="XmlMarshal.html">
+<link title="Constructor" rel="Chapter" href="Constructor.html">
+<link title="Defs" rel="Chapter" href="Defs.html">
+<link title="Func" rel="Chapter" href="Func.html">
+<link title="MatRot" rel="Chapter" href="MatRot.html">
+<link title="Serializable" rel="Chapter" href="Serializable.html">
+<link title="Camara" rel="Chapter" href="Camara.html">
+<link title="Luz" rel="Chapter" href="Luz.html">
+<link title="Material" rel="Chapter" href="Material.html">
+<link title="Textura" rel="Chapter" href="Textura.html"><title>Transformacion.transformacion</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a href="Transformacion.html">Up</a>
+&nbsp;</div>
+<center><h1>Class <a href="type_Transformacion.transformacion.html">Transformacion.transformacion</a></h1></center>
+<br>
+<pre><span class="keyword">class</span> <a name="TYPEtransformacion"></a>transformacion : <code class="type">object  end</code></pre><div class="info">
+Transformaciones de traslación, rotación y escalado<br>
+</div>
+<b>Inherits</b><ul>
+<li><a href="Serializable.serializable.html"><code class="code"><span class="constructor">Serializable</span>.serializable</code></a></li>
+</ul>
+<hr width="100%">
+<pre><span class="keyword">val</span> <a name="ATTtx"></a><span class="keyword">mutable</span> <a href="code_ATTTransformacion.transformacion.tx.html">tx</a> : <code class="type">float</code></pre><div class="info">
+Traslación sobre el eje<br>
+</div>
+<pre><span class="keyword">val</span> <a name="ATTty"></a><span class="keyword">mutable</span> <a href="code_ATTTransformacion.transformacion.ty.html">ty</a> : <code class="type">float</code></pre><pre><span class="keyword">val</span> <a name="ATTtz"></a><span class="keyword">mutable</span> <a href="code_ATTTransformacion.transformacion.tz.html">tz</a> : <code class="type">float</code></pre><pre><span class="keyword">val</span> <a name="ATTrot"></a><span class="keyword">mutable</span> <a href="code_ATTTransformacion.transformacion.rot.html">rot</a> : <code class="type"><a href="MatRot.mat_rot.html">MatRot.mat_rot</a></code></pre><div class="info">
+Matriz de rotación<br>
+</div>
+<pre><span class="keyword">val</span> <a name="ATTsx"></a><span class="keyword">mutable</span> <a href="code_ATTTransformacion.transformacion.sx.html">sx</a> : <code class="type">float</code></pre><div class="info">
+Escalado del eje<br>
+</div>
+<pre><span class="keyword">val</span> <a name="ATTsy"></a><span class="keyword">mutable</span> <a href="code_ATTTransformacion.transformacion.sy.html">sy</a> : <code class="type">float</code></pre><pre><span class="keyword">val</span> <a name="ATTsz"></a><span class="keyword">mutable</span> <a href="code_ATTTransformacion.transformacion.sz.html">sz</a> : <code class="type">float</code></pre><pre><span class="keyword">method</span> <a name="METHODget_tx"></a><a href="code_METHODTransformacion.transformacion.get_tx.html">get_tx</a> : <code class="type">float</code></pre><div class="info">
+Selector de la traslación<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODget_ty"></a><a href="code_METHODTransformacion.transformacion.get_ty.html">get_ty</a> : <code class="type">float</code></pre><pre><span class="keyword">method</span> <a name="METHODget_tz"></a><a href="code_METHODTransformacion.transformacion.get_tz.html">get_tz</a> : <code class="type">float</code></pre><pre><span class="keyword">method</span> <a name="METHODget_t"></a><a href="code_METHODTransformacion.transformacion.get_t.html">get_t</a> : <code class="type">float * float * float</code></pre><pre><span class="keyword">method</span> <a name="METHODset_t"></a><a href="code_METHODTransformacion.transformacion.set_t.html">set_t</a> : <code class="type">?x:float -> ?y:float -> ?z:float -> unit -> unit</code></pre><div class="info">
+Modificador de la traslación<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODget_rx"></a><a href="code_METHODTransformacion.transformacion.get_rx.html">get_rx</a> : <code class="type">float</code></pre><div class="info">
+Selector de la rotación<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODget_ry"></a><a href="code_METHODTransformacion.transformacion.get_ry.html">get_ry</a> : <code class="type">float</code></pre><pre><span class="keyword">method</span> <a name="METHODget_rz"></a><a href="code_METHODTransformacion.transformacion.get_rz.html">get_rz</a> : <code class="type">float</code></pre><pre><span class="keyword">method</span> <a name="METHODget_r"></a><a href="code_METHODTransformacion.transformacion.get_r.html">get_r</a> : <code class="type">float * float * float</code></pre><pre><span class="keyword">method</span> <a name="METHODset_r"></a><a href="code_METHODTransformacion.transformacion.set_r.html">set_r</a> : <code class="type">?x:float -> ?y:float -> ?z:float -> unit -> unit</code></pre><div class="info">
+Modificador de la rotación<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODget_sx"></a><a href="code_METHODTransformacion.transformacion.get_sx.html">get_sx</a> : <code class="type">float</code></pre><div class="info">
+Selector del escalado<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODget_sy"></a><a href="code_METHODTransformacion.transformacion.get_sy.html">get_sy</a> : <code class="type">float</code></pre><pre><span class="keyword">method</span> <a name="METHODget_sz"></a><a href="code_METHODTransformacion.transformacion.get_sz.html">get_sz</a> : <code class="type">float</code></pre><pre><span class="keyword">method</span> <a name="METHODget_s"></a><a href="code_METHODTransformacion.transformacion.get_s.html">get_s</a> : <code class="type">float * float * float</code></pre><pre><span class="keyword">method</span> <a name="METHODset_s"></a><a href="code_METHODTransformacion.transformacion.set_s.html">set_s</a> : <code class="type">?x:float -> ?y:float -> ?z:float -> unit -> unit</code></pre><div class="info">
+Modificador del escalado<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODtrasladar"></a><a href="code_METHODTransformacion.transformacion.trasladar.html">trasladar</a> : <code class="type">?x:int -> ?y:int -> ?z:int -> unit -> string</code></pre><div class="info">
+Traslación sobre el eje<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODrotar"></a><a href="code_METHODTransformacion.transformacion.rotar.html">rotar</a> : <code class="type">?x:int -> ?y:int -> ?z:int -> unit -> string</code></pre><div class="info">
+Rotación sobre el eje<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODescalar"></a><a href="code_METHODTransformacion.transformacion.escalar.html">escalar</a> : <code class="type">?x:int -> ?y:int -> ?z:int -> unit -> string</code></pre><div class="info">
+Escalado sobre el eje<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODclase"></a><a href="code_METHODTransformacion.transformacion.clase.html">clase</a> : <code class="type">string</code></pre><div class="info">
+Implementación de la interfaz <code class="code">serializable</code><br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODfrom_xml"></a><a href="code_METHODTransformacion.transformacion.from_xml.html">from_xml</a> : <code class="type">Xml.xml -> unit</code></pre><div class="info">
+Implementación de la interfaz <code class="code">serializable</code><br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODto_xml"></a><a href="code_METHODTransformacion.transformacion.to_xml.html">to_xml</a> : <code class="type">Xml.xml</code></pre><div class="info">
+Implementación de la interfaz <code class="code">serializable</code><br>
+</div>
+</body></html>

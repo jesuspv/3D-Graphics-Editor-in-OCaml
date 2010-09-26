@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE textura SYSTEM "../etc/textura.dtd">
+
+<textura nombre="Papel">
+	<mapeado entorno="combinar" filtrado="lineal" repeticion="on"/>
+	<archivo>../res/img/papel.pnm</archivo>
+</textura>

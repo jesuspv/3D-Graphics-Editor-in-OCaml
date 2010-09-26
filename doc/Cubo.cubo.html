@@ -1,0 +1,85 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="Start" href="index.html">
+<link rel="Up" href="Cubo.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Estado" rel="Chapter" href="Estado.html">
+<link title="Herramientas" rel="Chapter" href="Herramientas.html">
+<link title="Menus" rel="Chapter" href="Menus.html">
+<link title="Vistas" rel="Chapter" href="Vistas.html">
+<link title="Entorno" rel="Chapter" href="Entorno.html">
+<link title="Escena" rel="Chapter" href="Escena.html">
+<link title="Suelo" rel="Chapter" href="Suelo.html">
+<link title="Cilindro" rel="Chapter" href="Cilindro.html">
+<link title="Cono" rel="Chapter" href="Cono.html">
+<link title="Cubo" rel="Chapter" href="Cubo.html">
+<link title="Dibujable" rel="Chapter" href="Dibujable.html">
+<link title="Disco" rel="Chapter" href="Disco.html">
+<link title="Esfera" rel="Chapter" href="Esfera.html">
+<link title="Extrusion" rel="Chapter" href="Extrusion.html">
+<link title="Malla" rel="Chapter" href="Malla.html">
+<link title="Revolucion" rel="Chapter" href="Revolucion.html">
+<link title="Toro" rel="Chapter" href="Toro.html">
+<link title="Transformacion" rel="Chapter" href="Transformacion.html">
+<link title="Editor" rel="Chapter" href="Editor.html">
+<link title="Ventana" rel="Chapter" href="Ventana.html">
+<link title="Reflejos" rel="Chapter" href="Reflejos.html">
+<link title="Sombras" rel="Chapter" href="Sombras.html">
+<link title="XmlMarshal" rel="Chapter" href="XmlMarshal.html">
+<link title="Constructor" rel="Chapter" href="Constructor.html">
+<link title="Defs" rel="Chapter" href="Defs.html">
+<link title="Func" rel="Chapter" href="Func.html">
+<link title="MatRot" rel="Chapter" href="MatRot.html">
+<link title="Serializable" rel="Chapter" href="Serializable.html">
+<link title="Camara" rel="Chapter" href="Camara.html">
+<link title="Luz" rel="Chapter" href="Luz.html">
+<link title="Material" rel="Chapter" href="Material.html">
+<link title="Textura" rel="Chapter" href="Textura.html"><title>Cubo.cubo</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a href="Cubo.html">Up</a>
+&nbsp;</div>
+<center><h1>Class <a href="type_Cubo.cubo.html">Cubo.cubo</a></h1></center>
+<br>
+<pre><span class="keyword">class</span> <a name="TYPEcubo"></a>cubo : <code class="type">lado:float -> object  end</code></pre><div class="info">
+Primitiva para los cubos<br>
+</div>
+<b>Inherits</b><ul>
+<li><a href="Dibujable.dibujable.html"><code class="code"><span class="constructor">Dibujable</span>.dibujable</code></a></li>
+<li><a href="Serializable.serializable.html"><code class="code"><span class="constructor">Serializable</span>.serializable</code></a></li>
+</ul>
+<hr width="100%">
+<pre><span class="keyword">val</span> <a name="ATTlado"></a><span class="keyword">mutable</span> <a href="code_ATTCubo.cubo.lado.html">lado</a> : <code class="type">float</code></pre><div class="info">
+Lado<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODget_lado"></a><a href="code_METHODCubo.cubo.get_lado.html">get_lado</a> : <code class="type">float</code></pre><div class="info">
+Selector del lado<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODset_lado"></a><a href="code_METHODCubo.cubo.set_lado.html">set_lado</a> : <code class="type">float -> unit</code></pre><div class="info">
+Modificador del lado<br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODdibujar"></a><a href="code_METHODCubo.cubo.dibujar.html">dibujar</a> : <code class="type">normales:[ `Poligono | `Vertice ] -><br>       cara:Gl.face -> ?sombra:bool -> unit -> unit</code></pre><div class="info">
+Implementación de la interfaz <code class="code">dibujable</code><br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODget_extremo"></a><a href="code_METHODCubo.cubo.get_extremo.html">get_extremo</a> : <code class="type">float</code></pre><div class="info">
+Implementación de la interfaz <code class="code">dibujable</code><br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODget_limites"></a><a href="code_METHODCubo.cubo.get_limites.html">get_limites</a> : <code class="type">Gl.vect3</code></pre><div class="info">
+Implementación de la interfaz <code class="code">dibujable</code><br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODclase"></a><a href="code_METHODCubo.cubo.clase.html">clase</a> : <code class="type">string</code></pre><div class="info">
+Implementación de la interfaz <code class="code">serializable</code><br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODfrom_xml"></a><a href="code_METHODCubo.cubo.from_xml.html">from_xml</a> : <code class="type">Xml.xml -> unit</code></pre><div class="info">
+Implementación de la interfaz <code class="code">serializable</code><br>
+</div>
+<pre><span class="keyword">method</span> <a name="METHODto_xml"></a><a href="code_METHODCubo.cubo.to_xml.html">to_xml</a> : <code class="type">Xml.xml</code></pre><div class="info">
+Implementación de la interfaz <code class="code">serializable</code><br>
+</div>
+</body></html>

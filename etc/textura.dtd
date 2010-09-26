@@ -1,0 +1,21 @@
+<!-- [INI] textura.ml -->
+<!ELEMENT textura (mapeado, (archivo | raster))>
+<!ATTLIST textura
+	nombre CDATA   #REQUIRED
+>
+<!ELEMENT mapeado EMPTY>
+<!ATTLIST mapeado
+	entorno    (remplazar | combinar)    #REQUIRED
+	filtrado   (lineal    | mas_cercano) #REQUIRED
+	repeticion (on | off)                #REQUIRED
+>
+<!-- La ruta, de ser relativa, será respecto al archivo de la escena -->
+<!ELEMENT archivo (#PCDATA)>
+<!-- el número de pixels tiene que ser potencia de 2 -->
+<!ELEMENT raster (#PCDATA)>
+<!-- ancho y alto deben ser potencia de 2 -->
+<!ATTLIST raster
+	ancho NMTOKEN #REQUIRED
+	alto  NMTOKEN #REQUIRED
+>
+<!-- [FIN] textura.ml -->

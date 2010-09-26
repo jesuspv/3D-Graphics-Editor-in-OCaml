@@ -1,0 +1,111 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Entorno.html">
+<link rel="next" href="Suelo.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Estado" rel="Chapter" href="Estado.html">
+<link title="Herramientas" rel="Chapter" href="Herramientas.html">
+<link title="Menus" rel="Chapter" href="Menus.html">
+<link title="Vistas" rel="Chapter" href="Vistas.html">
+<link title="Entorno" rel="Chapter" href="Entorno.html">
+<link title="Escena" rel="Chapter" href="Escena.html">
+<link title="Suelo" rel="Chapter" href="Suelo.html">
+<link title="Cilindro" rel="Chapter" href="Cilindro.html">
+<link title="Cono" rel="Chapter" href="Cono.html">
+<link title="Cubo" rel="Chapter" href="Cubo.html">
+<link title="Dibujable" rel="Chapter" href="Dibujable.html">
+<link title="Disco" rel="Chapter" href="Disco.html">
+<link title="Esfera" rel="Chapter" href="Esfera.html">
+<link title="Extrusion" rel="Chapter" href="Extrusion.html">
+<link title="Malla" rel="Chapter" href="Malla.html">
+<link title="Revolucion" rel="Chapter" href="Revolucion.html">
+<link title="Toro" rel="Chapter" href="Toro.html">
+<link title="Transformacion" rel="Chapter" href="Transformacion.html">
+<link title="Editor" rel="Chapter" href="Editor.html">
+<link title="Ventana" rel="Chapter" href="Ventana.html">
+<link title="Reflejos" rel="Chapter" href="Reflejos.html">
+<link title="Sombras" rel="Chapter" href="Sombras.html">
+<link title="XmlMarshal" rel="Chapter" href="XmlMarshal.html">
+<link title="Constructor" rel="Chapter" href="Constructor.html">
+<link title="Defs" rel="Chapter" href="Defs.html">
+<link title="Func" rel="Chapter" href="Func.html">
+<link title="MatRot" rel="Chapter" href="MatRot.html">
+<link title="Serializable" rel="Chapter" href="Serializable.html">
+<link title="Camara" rel="Chapter" href="Camara.html">
+<link title="Luz" rel="Chapter" href="Luz.html">
+<link title="Material" rel="Chapter" href="Material.html">
+<link title="Textura" rel="Chapter" href="Textura.html"><title>Escena</title>
+</head>
+<body>
+<div class="navbar"><a href="Entorno.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="Suelo.html">Next</a>
+</div>
+<center><h1>Module <a href="type_Escena.html">Escena</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Escena: <code class="type">sig  end</code></pre><div class="info">
+Funcionalidades solicitables a la escena<br>
+</div>
+<hr width="100%">
+<pre><span class="keyword">val</span> <a name="VALtransformacion"></a>transformacion : <code class="type">[ `Borrar | `Escalar | `Girar | `Mover | `Rotar | `Situar | `Zoom ]<br>       Pervasives.ref</code></pre><div class="info">
+<code class="code"><span class="constructor">Escena</span>.transformacion</code> variable de estado indicando que tipo de
+   transformación se llevará a cabo en la escena.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALeje"></a>eje : <code class="type">[ `X | `XY | `XZ | `Y | `YZ | `Z ] Pervasives.ref</code></pre><div class="info">
+<code class="code"><span class="constructor">Escena</span>.eje</code> variable de estado indicando el eje sobre el que se llevará
+   a cabo la transformación.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALreflejos"></a>reflejos : <code class="type">bool Pervasives.ref</code></pre><div class="info">
+<code class="code"><span class="constructor">Escena</span>.reflejos</code> variable de estado indicando si los reflejos se deben de representar o no.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALnueva"></a>nueva : <code class="type">unit -> string</code></pre><div class="info">
+<code class="code"><span class="constructor">Escena</span>.nueva ()</code> reinicia las estructuras de datos de la escena.<br>
+<b>Returns</b> Estado de la operación<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALcargar"></a>cargar : <code class="type">string -> unit</code></pre><div class="info">
+<code class="code"><span class="constructor">Escena</span>.cargar archivo</code> carga los datos de la escena a partir
+    de la definición de escena en un archivo XML.<br>
+<b>Returns</b> Estado de la operación<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALguardar"></a>guardar : <code class="type">string -> string</code></pre><div class="info">
+<code class="code"><span class="constructor">Escena</span>.guardar archivo</code> guarda los datos de la escena en
+    un archivo XML de definición de la escena.<br>
+<b>Returns</b> Estado de la operación<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALregistrar_vista"></a>registrar_vista : <code class="type">Togl.widget -> unit</code></pre><div class="info">
+<code class="code"><span class="constructor">Escena</span>.registrar_vista vista</code> registra la vista <code class="code">vista</code> como vista
+    que representa la escena.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALadd_luz"></a>add_luz : <code class="type"><a href="Luz.luz.html">Luz.luz</a> -> unit</code></pre><div class="info">
+<code class="code"><span class="constructor">Escena</span>.add_luz luz</code> añade la luz <code class="code">luz</code> a la lista de luces de la escena.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALadd_obj"></a>add_obj : <code class="type"><a href="Dibujable.dibujable.html">Dibujable.dibujable</a> -> unit</code></pre><div class="info">
+<code class="code"><span class="constructor">Escena</span>.add_obj obj</code> añade el objeto <code class="code">obj</code> a la lista de objetos de la escena.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALreflejos_activos"></a>reflejos_activos : <code class="type">unit -> bool</code></pre><div class="info">
+<code class="code"><span class="constructor">Escena</span>.reflejos_activos</code> indica si los reflejos están siendo representados.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALreflejos_activar"></a>reflejos_activar : <code class="type">unit -> unit</code></pre><div class="info">
+<code class="code"><span class="constructor">Escena</span>.reflejos_activar</code> activa la representación de los reflejos.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALreflejos_desactivar"></a>reflejos_desactivar : <code class="type">unit -> unit</code></pre><div class="info">
+<code class="code"><span class="constructor">Escena</span>.reflejos_desactivar</code> desactiva la representación de los reflejos.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALsombras_activas"></a>sombras_activas : <code class="type">unit -> bool</code></pre><div class="info">
+<code class="code"><span class="constructor">Escena</span>.sombras_activas</code> indica si las sombras están siendo representadas.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALsombras_activar"></a>sombras_activar : <code class="type">unit -> unit</code></pre><div class="info">
+<code class="code"><span class="constructor">Escena</span>.sombras_activar</code> activa la representación de las sombras.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALsombras_desactivar"></a>sombras_desactivar : <code class="type">unit -> unit</code></pre><div class="info">
+<code class="code"><span class="constructor">Escena</span>.sombras_desactivar</code> desactiva la representación de las sombras.<br>
+</div>
+</body></html>

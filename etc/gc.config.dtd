@@ -1,0 +1,225 @@
+<!-- [INI] entorno.ml -->
+<!ELEMENT entorno (geometria, materiales, iluminacion)>
+<!ELEMENT geometria (cilindro | cono | cubo | disco | esfera | extrusion | malla | revolucion | toro)*>
+<!ELEMENT materiales (material*)>
+<!ELEMENT iluminacion (puntual | direccional | focal)*>
+<!-- [FIN] entorno.ml -->
+
+<!-- [INI] luz.ml -->
+<!ELEMENT ambiental EMPTY>
+<!ATTLIST ambiental
+	r NMTOKEN #REQUIRED
+	g NMTOKEN #REQUIRED
+	b NMTOKEN #REQUIRED
+	a NMTOKEN #REQUIRED
+>
+<!ELEMENT puntual (atenuacion, especular, difusa, ambiente, posicion)>
+<!ATTLIST puntual
+	nombre CDATA #REQUIRED
+>
+<!ELEMENT atenuacion EMPTY>
+<!ATTLIST atenuacion
+	distancia (constante | lineal | cuadratica) #REQUIRED
+	factor    NMTOKEN                           #REQUIRED
+>
+<!ELEMENT difusa EMPTY>
+<!ATTLIST difusa
+	r NMTOKEN #REQUIRED
+	g NMTOKEN #REQUIRED
+	b NMTOKEN #REQUIRED
+	a NMTOKEN #REQUIRED
+>
+<!ELEMENT posicion EMPTY>
+<!ATTLIST posicion
+	x NMTOKEN #REQUIRED
+	y NMTOKEN #REQUIRED
+	z NMTOKEN #REQUIRED
+>
+<!ELEMENT direccional (atenuacion, especular, difusa, ambiente, posicion, orientacion)>
+<!ATTLIST direccional
+	nombre CDATA #REQUIRED
+>
+<!ELEMENT orientacion EMPTY>
+<!ATTLIST orientacion
+	x NMTOKEN #REQUIRED
+	y NMTOKEN #REQUIRED
+	z NMTOKEN #REQUIRED
+>
+<!ELEMENT focal (atenuacion, especular, difusa, ambiente, posicion, orientacion)>
+<!ATTLIST focal
+	nombre     CDATA   #REQUIRED
+	intensidad NMTOKEN #REQUIRED
+	apertura   NMTOKEN #REQUIRED
+>
+<!-- [FIN] luz.ml -->
+
+<!-- [INI] cilindro.ml -->
+<!ELEMENT cilindro (material, transformacion)>
+<!ATTLIST cilindro
+	nombre     CDATA   #REQUIRED
+	base       NMTOKEN #REQUIRED
+	altura     NMTOKEN #REQUIRED
+	meridianos NMTOKEN #REQUIRED
+	paralelos  NMTOKEN #REQUIRED
+>
+<!-- [FIN] cilindro.ml -->
+
+<!-- [INI] cono.ml -->
+<!ELEMENT cono (material, transformacion)>
+<!ATTLIST cono
+	nombre     CDATA   #REQUIRED
+	base       NMTOKEN #REQUIRED
+	altura     NMTOKEN #REQUIRED
+	meridianos NMTOKEN #REQUIRED
+	paralelos  NMTOKEN #REQUIRED
+>
+<!-- [FIN] cono.ml -->
+
+<!-- [INI] cubo.ml -->
+<!ELEMENT cubo (material, transformacion)>
+<!ATTLIST cubo
+	nombre CDATA   #REQUIRED
+	lado   NMTOKEN #REQUIRED
+>
+<!-- [FIN] cubo.ml -->
+
+<!-- [INI] disco.ml -->
+<!ELEMENT disco (material, transformacion)>
+<!ATTLIST disco
+	nombre     CDATA   #REQUIRED
+	interior   NMTOKEN #REQUIRED
+	exterior   NMTOKEN #REQUIRED
+	meridianos NMTOKEN #REQUIRED
+	paralelos  NMTOKEN #REQUIRED
+>
+<!-- [FIN] disco.ml -->
+
+<!-- [INI] esfera.ml -->
+<!ELEMENT esfera (material, transformacion)>
+<!ATTLIST esfera
+	nombre     CDATA   #REQUIRED
+	radio      NMTOKEN #REQUIRED
+	meridianos NMTOKEN #REQUIRED
+	paralelos  NMTOKEN #REQUIRED
+>
+<!-- [FIN] esfera.ml -->
+
+<!-- [INI] extrusion.ml -->
+<!ELEMENT extrusion (material, transformacion, seccion)>
+<!ATTLIST extrusion
+	nombre      CDATA   #REQUIRED
+	profundidad NMTOKEN #REQUIRED
+>
+<!-- [FIN] extrusion.ml -->
+
+<!-- [INI] malla.ml -->
+<!ELEMENT malla (material, transformacion, superficie)>
+<!ATTLIST malla
+	nombre  CDATA   #REQUIRED
+>
+<!ELEMENT superficie (cara+)>
+<!ATTLIST superficie
+	textura CDATA #IMPLIED
+>
+<!ELEMENT cara (punto3, punto3, punto3)>
+<!ELEMENT punto3 EMPTY>
+<!ATTLIST punto3
+	u NMTOKEN #REQUIRED
+	v NMTOKEN #REQUIRED
+	x NMTOKEN #REQUIRED
+	y NMTOKEN #REQUIRED
+	z NMTOKEN #REQUIRED
+>
+<!-- [FIN] malla.ml -->
+
+<!-- [INI] revolucion.ml -->
+<!ELEMENT revolucion (material, transformacion, seccion)>
+<!ATTLIST revolucion
+	nombre     CDATA   #REQUIRED
+	radio      NMTOKEN #REQUIRED
+	grados     NMTOKEN #REQUIRED
+	meridianos NMTOKEN #REQUIRED
+>
+<!-- [FIN] revolucion.ml -->
+
+<!-- [INI] extrusion.ml, revolucion.ml -->
+<!ELEMENT seccion (punto2, punto2, punto2+)>
+<!ELEMENT punto2 EMPTY>
+<!ATTLIST punto2
+	u NMTOKEN #REQUIRED
+	v NMTOKEN #REQUIRED
+>
+<!-- [FIN] extrusion.ml, revolucion.ml -->
+
+<!-- [INI] toro.ml -->
+<!ELEMENT toro (material, transformacion)>
+<!ATTLIST toro
+	nombre     CDATA   #REQUIRED
+	interior   NMTOKEN #REQUIRED
+	exterior   NMTOKEN #REQUIRED
+	grados     NMTOKEN #REQUIRED
+	meridianos NMTOKEN #REQUIRED
+	paralelos  NMTOKEN #REQUIRED
+>
+<!-- [FIN] toro.ml -->
+
+<!-- [INI] material.ml -->
+<!ELEMENT material (brillo, especular, difuso, ambiente, emision)>
+<!ATTLIST material
+	nombre CDATA #REQUIRED
+>
+<!ELEMENT brillo EMPTY>
+<!ATTLIST brillo
+	factor NMTOKEN #REQUIRED
+>
+<!ELEMENT especular EMPTY>
+<!ATTLIST especular
+	r NMTOKEN #REQUIRED
+	g NMTOKEN #REQUIRED
+	b NMTOKEN #REQUIRED
+	a NMTOKEN #REQUIRED
+>
+<!ELEMENT difuso EMPTY>
+<!ATTLIST difuso
+	r NMTOKEN #REQUIRED
+	g NMTOKEN #REQUIRED
+	b NMTOKEN #REQUIRED
+	a NMTOKEN #REQUIRED
+>
+<!ELEMENT ambiente EMPTY>
+<!ATTLIST ambiente
+	r NMTOKEN #REQUIRED
+	g NMTOKEN #REQUIRED
+	b NMTOKEN #REQUIRED
+	a NMTOKEN #REQUIRED
+>
+<!ELEMENT emision EMPTY>
+<!ATTLIST emision
+	r NMTOKEN #REQUIRED
+	g NMTOKEN #REQUIRED
+	b NMTOKEN #REQUIRED
+	a NMTOKEN #REQUIRED
+>
+<!-- [FIN] material.ml -->
+
+<!-- [INI] transformacion.ml -->
+<!ELEMENT transformacion (traslacion, rotacion, escalado)>
+<!ELEMENT traslacion EMPTY>
+<!ATTLIST traslacion
+	x NMTOKEN #REQUIRED
+	y NMTOKEN #REQUIRED
+	z NMTOKEN #REQUIRED
+>
+<!ELEMENT rotacion EMPTY>
+<!ATTLIST rotacion
+	x NMTOKEN #REQUIRED
+	y NMTOKEN #REQUIRED
+	z NMTOKEN #REQUIRED
+>
+<!ELEMENT escalado EMPTY>
+<!ATTLIST escalado
+	x NMTOKEN #REQUIRED
+	y NMTOKEN #REQUIRED
+	z NMTOKEN #REQUIRED
+>
+<!-- [FIN] transformacion.ml -->

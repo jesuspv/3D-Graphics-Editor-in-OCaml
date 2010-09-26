@@ -1,0 +1,15 @@
+* Para generar la aplicación en código byte:
+	make lib.byte
+	make byte
+* Para generar la aplicación en código nativo:
+	make lib.opt
+	make opt
+* Para generar el guión para el top level:
+	make lib.byte
+	make top
+* Para generar todo lo anterior de golpe:
+	make all
+* Para generar la documentación:
+	make doc
+* Para generar la copia de distribución:
+	make dist

@@ -1,0 +1,107 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Estado" rel="Chapter" href="Estado.html">
+<link title="Herramientas" rel="Chapter" href="Herramientas.html">
+<link title="Menus" rel="Chapter" href="Menus.html">
+<link title="Vistas" rel="Chapter" href="Vistas.html">
+<link title="Entorno" rel="Chapter" href="Entorno.html">
+<link title="Escena" rel="Chapter" href="Escena.html">
+<link title="Suelo" rel="Chapter" href="Suelo.html">
+<link title="Cilindro" rel="Chapter" href="Cilindro.html">
+<link title="Cono" rel="Chapter" href="Cono.html">
+<link title="Cubo" rel="Chapter" href="Cubo.html">
+<link title="Dibujable" rel="Chapter" href="Dibujable.html">
+<link title="Disco" rel="Chapter" href="Disco.html">
+<link title="Esfera" rel="Chapter" href="Esfera.html">
+<link title="Extrusion" rel="Chapter" href="Extrusion.html">
+<link title="Malla" rel="Chapter" href="Malla.html">
+<link title="Revolucion" rel="Chapter" href="Revolucion.html">
+<link title="Toro" rel="Chapter" href="Toro.html">
+<link title="Transformacion" rel="Chapter" href="Transformacion.html">
+<link title="Editor" rel="Chapter" href="Editor.html">
+<link title="Ventana" rel="Chapter" href="Ventana.html">
+<link title="Reflejos" rel="Chapter" href="Reflejos.html">
+<link title="Sombras" rel="Chapter" href="Sombras.html">
+<link title="XmlMarshal" rel="Chapter" href="XmlMarshal.html">
+<link title="Constructor" rel="Chapter" href="Constructor.html">
+<link title="Defs" rel="Chapter" href="Defs.html">
+<link title="Func" rel="Chapter" href="Func.html">
+<link title="MatRot" rel="Chapter" href="MatRot.html">
+<link title="Serializable" rel="Chapter" href="Serializable.html">
+<link title="Camara" rel="Chapter" href="Camara.html">
+<link title="Luz" rel="Chapter" href="Luz.html">
+<link title="Material" rel="Chapter" href="Material.html">
+<link title="Textura" rel="Chapter" href="Textura.html"><title>Cono.cono</title>
+</head>
+<body>
+<code class="code">base:float&nbsp;<span class="keywordsign">-&gt;</span><br>
+altura:float&nbsp;<span class="keywordsign">-&gt;</span><br>
+meridianos:int&nbsp;<span class="keywordsign">-&gt;</span><br>
+paralelos:int&nbsp;<span class="keywordsign">-&gt;</span><br>
+<span class="keyword">object</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;<span class="keyword">mutable</span>&nbsp;altura&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;<span class="keyword">mutable</span>&nbsp;base&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;<span class="keyword">mutable</span>&nbsp;display_lists&nbsp;:&nbsp;<span class="constructor">GlList</span>.t&nbsp;option&nbsp;array&nbsp;array<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;<span class="keyword">mutable</span>&nbsp;material&nbsp;:&nbsp;<span class="constructor">Material</span>.material<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;<span class="keyword">mutable</span>&nbsp;meridianos&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;<span class="keyword">mutable</span>&nbsp;nombre&nbsp;:&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;<span class="keyword">mutable</span>&nbsp;paralelos&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;<span class="keyword">mutable</span>&nbsp;rot&nbsp;:&nbsp;<span class="constructor">MatRot</span>.mat_rot<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;<span class="keyword">mutable</span>&nbsp;sx&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;<span class="keyword">mutable</span>&nbsp;sy&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;<span class="keyword">mutable</span>&nbsp;sz&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;<span class="keyword">mutable</span>&nbsp;tx&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;<span class="keyword">mutable</span>&nbsp;ty&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;<span class="keyword">mutable</span>&nbsp;tz&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;call_display_list&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;normales:[&nbsp;<span class="keywordsign">`</span><span class="constructor">Poligono</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Vertice</span>&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;cara:[&nbsp;<span class="keywordsign">`</span>back&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>front&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?sombra:bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;clase&nbsp;:&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;clear_display_lists&nbsp;:&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;dibujar&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;normales:[&nbsp;<span class="keywordsign">`</span><span class="constructor">Poligono</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Vertice</span>&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;cara:<span class="constructor">Gl</span>.face&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?sombra:bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;escalar&nbsp;:&nbsp;?x:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?y:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?z:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;from_xml&nbsp;:&nbsp;<span class="constructor">Xml</span>.xml&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_altura&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_base&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_extremo&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_limites&nbsp;:&nbsp;<span class="constructor">Gl</span>.vect3<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_material&nbsp;:&nbsp;<span class="constructor">Material</span>.material<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_meridianos&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_nombre&nbsp;:&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_paralelos&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_r&nbsp;:&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_rx&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_ry&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_rz&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_s&nbsp;:&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_sx&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_sy&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_sz&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_t&nbsp;:&nbsp;float&nbsp;*&nbsp;float&nbsp;*&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_tx&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_ty&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;get_tz&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;rotar&nbsp;:&nbsp;?x:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?y:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?z:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;set_altura&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;set_base&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;set_display_list&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;set_material&nbsp;:&nbsp;<span class="constructor">Material</span>.material&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;set_meridianos&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;set_nombre&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;set_paralelos&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;set_r&nbsp;:&nbsp;?x:float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?y:float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?z:float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;set_s&nbsp;:&nbsp;?x:float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?y:float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?z:float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;set_t&nbsp;:&nbsp;?x:float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?y:float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?z:float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;to_xml&nbsp;:&nbsp;<span class="constructor">Xml</span>.xml<br>
+&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;trasladar&nbsp;:&nbsp;?x:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?y:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?z:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+<span class="keyword">end</span></code></body></html>

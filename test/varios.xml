@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE escena SYSTEM "../etc/escena.dtd">
+
+<escena>
+  <visualizacion>
+    <camara nombre="Superior" proyeccion="ortogonal" sentido="antihorario" modo="alambrico" z-buffer="on" culling="off" sombreado="plano" normales="poligono" iluminacion="off">
+      <situacion x="-0.03" y="0.63" z="0.50"/>
+      <giro x="-90.00" y="0.00" z="0.00"/>
+      <zoom factor="0.45"/>
+    </camara>
+    <camara nombre="Anterior" proyeccion="ortogonal" sentido="antihorario" modo="alambrico" z-buffer="on" culling="off" sombreado="plano" normales="poligono" iluminacion="off">
+      <situacion x="-0.46" y="1.01" z="0.74"/>
+      <giro x="0.00" y="0.00" z="0.00"/>
+      <zoom factor="0.60"/>
+    </camara>
+    <camara nombre="Izquierda" proyeccion="ortogonal" sentido="antihorario" modo="alambrico" z-buffer="on" culling="off" sombreado="plano" normales="poligono" iluminacion="off">
+      <situacion x="-0.71" y="0.85" z="0.49"/>
+      <giro x="0.00" y="-90.00" z="0.00"/>
+      <zoom factor="0.52"/>
+    </camara>
+    <camara nombre="Perspectiva" proyeccion="perspectiva" sentido="antihorario" modo="solido" z-buffer="on" culling="on" sombreado="suavizado" normales="vertice" iluminacion="on">
+      <situacion x="0.60" y="3.43" z="3.71"/>
+      <giro x="-39.12" y="6.06" z="-4.83"/>
+      <zoom factor="0.65"/>
+    </camara>
+  </visualizacion>
+  <iluminacion>
+    <ambiental r="0.15" g="0.15" b="0.15" a="1.00"/>
+    <puntual nombre="Bombilla">
+      <atenuacion distancia="lineal" factor="1.00"/>
+      <especular r="1.00" g="1.00" b="0.70" a="1.00"/>
+      <difusa r="0.50" g="0.50" b="0.20" a="1.00"/>
+      <ambiente r="0.50" g="0.50" b="0.20" a="1.00"/>
+      <posicion x="0.90" y="1.11" z="0.00"/>
+    </puntual>
+    <puntual nombre="Luz Clave">
+      <atenuacion distancia="lineal" factor="1.00"/>
+      <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+      <difusa r="0.80" g="0.80" b="0.80" a="1.00"/>
+      <ambiente r="0.40" g="0.40" b="0.40" a="1.00"/>
+      <posicion x="0.50" y="1.90" z="1.90"/>
+    </puntual>
+    <puntual nombre="Puntual">
+      <atenuacion distancia="lineal" factor="1.00"/>
+      <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+      <difusa r="1.00" g="1.00" b="1.00" a="1.00"/>
+      <ambiente r="1.00" g="1.00" b="1.00" a="1.00"/>
+      <posicion x="0.00" y="1.66" z="0.00"/>
+    </puntual>
+    <puntual nombre="Puntual">
+      <atenuacion distancia="lineal" factor="1.00"/>
+      <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+      <difusa r="1.00" g="1.00" b="1.00" a="1.00"/>
+      <ambiente r="1.00" g="1.00" b="1.00" a="1.00"/>
+      <posicion x="-0.19" y="1.79" z="1.90"/>
+    </puntual>
+  </iluminacion>
+  <geometria>
+    <revolucion nombre="Revolución" radio="1.00" grados="360.00" meridianos="32">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="0.55" y="0.49" z="0.75"/>
+        <rotacion x="0.00" y="0.00" z="0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <seccion>
+        <punto2 u="-1.00" v="-0.50"/>
+        <punto2 u="-0.86" v="-0.50"/>
+        <punto2 u="-0.79" v="-0.41"/>
+        <punto2 u="-0.77" v="-0.34"/>
+        <punto2 u="-0.76" v="-0.26"/>
+        <punto2 u="-0.78" v="-0.20"/>
+        <punto2 u="-0.82" v="-0.14"/>
+        <punto2 u="-0.91" v="-0.06"/>
+        <punto2 u="-0.94" v="-0.02"/>
+        <punto2 u="-0.93" v="0.04"/>
+        <punto2 u="-0.86" v="0.08"/>
+        <punto2 u="-0.86" v="0.12"/>
+        <punto2 u="-0.89" v="0.12"/>
+        <punto2 u="-0.88" v="0.10"/>
+        <punto2 u="-0.88" v="0.09"/>
+        <punto2 u="-0.95" v="0.04"/>
+        <punto2 u="-0.96" v="-0.03"/>
+        <punto2 u="-0.91" v="-0.08"/>
+        <punto2 u="-0.85" v="-0.14"/>
+        <punto2 u="-0.80" v="-0.20"/>
+        <punto2 u="-0.78" v="-0.27"/>
+        <punto2 u="-0.79" v="-0.34"/>
+        <punto2 u="-0.81" v="-0.40"/>
+        <punto2 u="-0.87" v="-0.48"/>
+        <punto2 u="-1.00" v="-0.48"/>
+        <punto2 u="-1.00" v="-0.50"/>
+      </seccion>
+    </revolucion>
+    <cilindro nombre="Cilindro" base="0.25" altura="0.50" meridianos="32" paralelos="1">
+      <material nombre="Malva">
+        <brillo factor="75.00"/>
+        <especular r="1.00" g="0.60" b="1.00" a="1.00"/>
+        <difuso r="0.75" g="0.00" b="0.75" a="1.00"/>
+        <ambiente r="0.50" g="0.00" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="1.30" y="1.39" z="0.99"/>
+        <rotacion x="77.38" y="1.77" z="-137.83"/>
+        <escalado x="1.00" y="1.62" z="-0.83"/>
+      </transformacion>
+    </cilindro>
+    <esfera nombre="Esfera" radio="0.25" meridianos="32" paralelos="32">
+      <material nombre="Cristal">
+        <brillo factor="10.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="0.50"/>
+        <difuso r="0.80" g="0.80" b="1.00" a="0.50"/>
+        <ambiente r="0.10" g="0.10" b="0.10" a="0.50"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="0.92" y="1.46" z="1.42"/>
+        <rotacion x="0.00" y="0.00" z="0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+    </esfera>
+    <revolucion nombre="Peonza" radio="0.00" grados="360.00" meridianos="32">
+      <material nombre="Verde Esmeralda">
+        <brillo factor="76.80"/>
+        <especular r="0.63" g="0.73" b="0.63" a="1.00"/>
+        <difuso r="0.08" g="0.61" b="0.08" a="1.00"/>
+        <ambiente r="0.02" g="0.17" b="0.02" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="-1.05" y="0.45" z="0.79"/>
+        <rotacion x="0.00" y="0.00" z="0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <seccion>
+        <punto2 u="0.00" v="-0.50"/>
+        <punto2 u="0.05" v="-0.30"/>
+        <punto2 u="0.15" v="-0.20"/>
+        <punto2 u="0.40" v="0.00"/>
+        <punto2 u="0.50" v="0.25"/>
+        <punto2 u="0.48" v="0.26"/>
+        <punto2 u="0.48" v="0.29"/>
+        <punto2 u="0.50" v="0.30"/>
+        <punto2 u="0.47" v="0.37"/>
+        <punto2 u="0.40" v="0.40"/>
+        <punto2 u="0.05" v="0.40"/>
+        <punto2 u="0.10" v="0.50"/>
+        <punto2 u="0.00" v="0.50"/>
+      </seccion>
+    </revolucion>
+    <extrusion nombre="Estrella" profundidad="0.50">
+      <material nombre="Funky">
+        <brillo factor="75.00"/>
+        <especular r="1.00" g="1.00" b="0.00" a="1.00"/>
+        <difuso r="0.60" g="0.60" b="0.00" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.00" a="1.00"/>
+        <emision r="0.50" g="0.00" b="0.50" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="-0.21" y="2.19" z="-0.13"/>
+        <rotacion x="23.20" y="0.00" z="0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <seccion>
+        <punto2 u="0.30" v="0.15"/>
+        <punto2 u="0.08" v="0.15"/>
+        <punto2 u="0.00" v="0.35"/>
+        <punto2 u="-0.08" v="0.15"/>
+        <punto2 u="-0.30" v="0.15"/>
+        <punto2 u="-0.15" v="0.00"/>
+        <punto2 u="-0.30" v="-0.15"/>
+        <punto2 u="-0.08" v="-0.15"/>
+        <punto2 u="0.00" v="-0.35"/>
+        <punto2 u="0.08" v="-0.15"/>
+        <punto2 u="0.30" v="-0.15"/>
+        <punto2 u="0.15" v="0.00"/>
+        <punto2 u="0.30" v="0.15"/>
+      </seccion>
+    </extrusion>
+    <malla nombre="Pirámide">
+      <material nombre="Imprimación">
+        <brillo factor="45.80"/>
+        <especular r="0.99" g="0.91" b="0.81" a="1.00"/>
+        <difuso r="0.78" g="0.57" b="0.11" a="1.00"/>
+        <ambiente r="0.33" g="0.22" b="0.03" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="0.08" y="2.17" z="1.45"/>
+        <rotacion x="0.00" y="0.00" z="0.00"/>
+        <escalado x="2.57" y="0.04" z="2.10"/>
+      </transformacion>
+      <superficie textura="../res/leopardo.xml">
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="0.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.50" v="1.00" x="0.00" y="0.25" z="0.00"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="1.00" x="-0.25" y="-0.25" z="0.25"/>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+        </cara>
+        <cara>
+          <punto3 u="0.00" v="0.00" x="-0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="0.00" x="0.25" y="-0.25" z="-0.25"/>
+          <punto3 u="1.00" v="1.00" x="0.25" y="-0.25" z="0.25"/>
+        </cara>
+      </superficie>
+    </malla>
+    <revolucion nombre="Revolución" radio="1.00" grados="360.00" meridianos="32">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="1.77" y="0.46" z="1.75"/>
+        <rotacion x="0.00" y="0.00" z="0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+      <seccion>
+        <punto2 u="-1.00" v="-0.49"/>
+        <punto2 u="-0.64" v="-0.49"/>
+        <punto2 u="-0.64" v="-0.40"/>
+        <punto2 u="-0.73" v="-0.40"/>
+        <punto2 u="-0.81" v="-0.30"/>
+        <punto2 u="-0.88" v="-0.26"/>
+        <punto2 u="-0.89" v="-0.02"/>
+        <punto2 u="-0.84" v="-0.02"/>
+        <punto2 u="-0.85" v="0.03"/>
+        <punto2 u="-0.88" v="0.03"/>
+        <punto2 u="-0.88" v="0.14"/>
+        <punto2 u="-0.82" v="0.14"/>
+        <punto2 u="-0.82" v="0.18"/>
+        <punto2 u="-0.87" v="0.18"/>
+        <punto2 u="-0.81" v="0.21"/>
+        <punto2 u="-0.78" v="0.24"/>
+        <punto2 u="-0.76" v="0.32"/>
+        <punto2 u="-0.81" v="0.42"/>
+        <punto2 u="-0.89" v="0.48"/>
+        <punto2 u="-0.95" v="0.51"/>
+        <punto2 u="-1.00" v="0.61"/>
+        <punto2 u="-1.00" v="-0.49"/>
+      </seccion>
+    </revolucion>
+    <extrusion nombre="Extrusión" profundidad="1.00">
+      <material nombre="Imprimación">
+        <brillo factor="15.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+        <difuso r="0.90" g="0.90" b="0.90" a="1.00"/>
+        <ambiente r="0.50" g="0.50" b="0.50" a="1.00"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="0.00" y="0.54" z="1.67"/>
+        <rotacion x="130.36" y="33.96" z="-40.07"/>
+        <escalado x="1.00" y="1.00" z="0.47"/>
+      </transformacion>
+      <seccion>
+        <punto2 u="-0.25" v="-0.49"/>
+        <punto2 u="0.25" v="-0.49"/>
+        <punto2 u="0.04" v="-0.15"/>
+        <punto2 u="0.04" v="0.07"/>
+        <punto2 u="0.21" v="0.14"/>
+        <punto2 u="0.22" v="0.30"/>
+        <punto2 u="0.15" v="0.30"/>
+        <punto2 u="0.14" v="0.22"/>
+        <punto2 u="0.08" v="0.22"/>
+        <punto2 u="0.08" v="0.31"/>
+        <punto2 u="0.02" v="0.30"/>
+        <punto2 u="0.02" v="0.23"/>
+        <punto2 u="-0.05" v="0.23"/>
+        <punto2 u="-0.04" v="0.32"/>
+        <punto2 u="-0.10" v="0.32"/>
+        <punto2 u="-0.10" v="0.24"/>
+        <punto2 u="-0.15" v="0.24"/>
+        <punto2 u="-0.15" v="0.33"/>
+        <punto2 u="-0.21" v="0.32"/>
+        <punto2 u="-0.20" v="0.14"/>
+        <punto2 u="-0.06" v="0.08"/>
+        <punto2 u="-0.06" v="-0.14"/>
+        <punto2 u="-0.24" v="-0.49"/>
+        <punto2 u="-0.25" v="-0.49"/>
+      </seccion>
+    </extrusion>
+  </geometria>
+</escena>

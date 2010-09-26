@@ -1,0 +1,135 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Material.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Estado" rel="Chapter" href="Estado.html">
+<link title="Herramientas" rel="Chapter" href="Herramientas.html">
+<link title="Menus" rel="Chapter" href="Menus.html">
+<link title="Vistas" rel="Chapter" href="Vistas.html">
+<link title="Entorno" rel="Chapter" href="Entorno.html">
+<link title="Escena" rel="Chapter" href="Escena.html">
+<link title="Suelo" rel="Chapter" href="Suelo.html">
+<link title="Cilindro" rel="Chapter" href="Cilindro.html">
+<link title="Cono" rel="Chapter" href="Cono.html">
+<link title="Cubo" rel="Chapter" href="Cubo.html">
+<link title="Dibujable" rel="Chapter" href="Dibujable.html">
+<link title="Disco" rel="Chapter" href="Disco.html">
+<link title="Esfera" rel="Chapter" href="Esfera.html">
+<link title="Extrusion" rel="Chapter" href="Extrusion.html">
+<link title="Malla" rel="Chapter" href="Malla.html">
+<link title="Revolucion" rel="Chapter" href="Revolucion.html">
+<link title="Toro" rel="Chapter" href="Toro.html">
+<link title="Transformacion" rel="Chapter" href="Transformacion.html">
+<link title="Editor" rel="Chapter" href="Editor.html">
+<link title="Ventana" rel="Chapter" href="Ventana.html">
+<link title="Reflejos" rel="Chapter" href="Reflejos.html">
+<link title="Sombras" rel="Chapter" href="Sombras.html">
+<link title="XmlMarshal" rel="Chapter" href="XmlMarshal.html">
+<link title="Constructor" rel="Chapter" href="Constructor.html">
+<link title="Defs" rel="Chapter" href="Defs.html">
+<link title="Func" rel="Chapter" href="Func.html">
+<link title="MatRot" rel="Chapter" href="MatRot.html">
+<link title="Serializable" rel="Chapter" href="Serializable.html">
+<link title="Camara" rel="Chapter" href="Camara.html">
+<link title="Luz" rel="Chapter" href="Luz.html">
+<link title="Material" rel="Chapter" href="Material.html">
+<link title="Textura" rel="Chapter" href="Textura.html"><title>Textura</title>
+</head>
+<body>
+<div class="navbar"><a href="Material.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;</div>
+<center><h1>Module <a href="type_Textura.html">Textura</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Textura: <code class="type">sig  end</code></pre><div class="info">
+Definición de texturas a partir de XML<br>
+</div>
+<hr width="100%">
+<br><code><span class="keyword">type</span> <a name="TYPEtextura"></a><code class="type"></code>textura = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>nombre&nbsp;: <code class="type">string</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>entorno&nbsp;: <code class="type">GlTex.env_param</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>filtrado_mag&nbsp;: <code class="type">[ `linear | `nearest ]</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>filtrado_min&nbsp;: <code class="type">GlTex.filter</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>repeticion&nbsp;: <code class="type">GlTex.wrap</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>ancho&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>alto&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>pixels&nbsp;: <code class="type">(GlTex.format, Gl.kind) GlPix.t</code>;</code></td>
+
+</tr></table>
+}
+
+<div class="info">
+Tipo textura<br>
+</div>
+
+<pre><span class="keyword">val</span> <a name="VALpor_defecto"></a><a href="code_VALTextura.por_defecto.html">por_defecto</a> : <code class="type"><a href="Textura.html#TYPEtextura">textura</a></code></pre><div class="info">
+Textura por defecto<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALcargar_archivo"></a><a href="code_VALTextura.cargar_archivo.html">cargar_archivo</a> : <code class="type">Xml.xml -> int * int * ([< Gl.format > `rgb ], [< Gl.kind > `ubyte ]) GlPix.t</code></pre><div class="info">
+Carga el archivo de imagen (FORMATO PNM CRUDO)<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALcargar_raster"></a><a href="code_VALTextura.cargar_raster.html">cargar_raster</a> : <code class="type">Xml.xml -><br>       int * int * ([< Gl.format > `rgba ], [< Gl.kind > `ubyte ]) GlPix.t</code></pre><div class="info">
+Carga el raster de pixels de imagen<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALfrom_xml"></a><a href="code_VALTextura.from_xml.html">from_xml</a> : <code class="type">Xml.xml -> <a href="Textura.html#TYPEtextura">textura</a></code></pre><div class="info">
+Importa una textura desde su definición XML<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALpintar"></a><a href="code_VALTextura.pintar.html">pintar</a> : <code class="type"><a href="Textura.html#TYPEtextura">textura</a> -> unit</code></pre><div class="info">
+Pinta la textura. Tras ello se deberá activar las texturas y tras dibujar el
+    objeto sería deseable desactivarlas.<br>
+</div>
+</body></html>

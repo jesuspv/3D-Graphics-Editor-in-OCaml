@@ -1,0 +1,62 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Estado" rel="Chapter" href="Estado.html">
+<link title="Herramientas" rel="Chapter" href="Herramientas.html">
+<link title="Menus" rel="Chapter" href="Menus.html">
+<link title="Vistas" rel="Chapter" href="Vistas.html">
+<link title="Entorno" rel="Chapter" href="Entorno.html">
+<link title="Escena" rel="Chapter" href="Escena.html">
+<link title="Suelo" rel="Chapter" href="Suelo.html">
+<link title="Cilindro" rel="Chapter" href="Cilindro.html">
+<link title="Cono" rel="Chapter" href="Cono.html">
+<link title="Cubo" rel="Chapter" href="Cubo.html">
+<link title="Dibujable" rel="Chapter" href="Dibujable.html">
+<link title="Disco" rel="Chapter" href="Disco.html">
+<link title="Esfera" rel="Chapter" href="Esfera.html">
+<link title="Extrusion" rel="Chapter" href="Extrusion.html">
+<link title="Malla" rel="Chapter" href="Malla.html">
+<link title="Revolucion" rel="Chapter" href="Revolucion.html">
+<link title="Toro" rel="Chapter" href="Toro.html">
+<link title="Transformacion" rel="Chapter" href="Transformacion.html">
+<link title="Editor" rel="Chapter" href="Editor.html">
+<link title="Ventana" rel="Chapter" href="Ventana.html">
+<link title="Reflejos" rel="Chapter" href="Reflejos.html">
+<link title="Sombras" rel="Chapter" href="Sombras.html">
+<link title="XmlMarshal" rel="Chapter" href="XmlMarshal.html">
+<link title="Constructor" rel="Chapter" href="Constructor.html">
+<link title="Defs" rel="Chapter" href="Defs.html">
+<link title="Func" rel="Chapter" href="Func.html">
+<link title="MatRot" rel="Chapter" href="MatRot.html">
+<link title="Serializable" rel="Chapter" href="Serializable.html">
+<link title="Camara" rel="Chapter" href="Camara.html">
+<link title="Luz" rel="Chapter" href="Luz.html">
+<link title="Material" rel="Chapter" href="Material.html">
+<link title="Textura" rel="Chapter" href="Textura.html"><title>Camara.camara.set_visualizacion</title>
+</head>
+<body>
+<code class="code"><span class="keyword">method</span>&nbsp;set_visualizacion<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?(proyeccion&nbsp;&nbsp;=&nbsp;_proyeccion&nbsp;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?(sentido&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;_sentido&nbsp;&nbsp;&nbsp;&nbsp;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?(modo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;_modo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?(z_buffer&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;_z_buffer&nbsp;&nbsp;&nbsp;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?(culling&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;_culling&nbsp;&nbsp;&nbsp;&nbsp;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?(sombreado&nbsp;&nbsp;&nbsp;=&nbsp;_sombreado&nbsp;&nbsp;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?(normales&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;_normales&nbsp;&nbsp;&nbsp;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?(iluminacion&nbsp;=&nbsp;_iluminacion)&nbsp;()&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_proyeccion&nbsp;&nbsp;&lt;-&nbsp;proyeccion;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_sentido&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;-&nbsp;sentido;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_modo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;-&nbsp;modo;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_z_buffer&nbsp;&nbsp;&nbsp;&nbsp;&lt;-&nbsp;z_buffer;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_culling&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;-&nbsp;culling;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_sombreado&nbsp;&nbsp;&nbsp;&lt;-&nbsp;sombreado;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_normales&nbsp;&nbsp;&nbsp;&nbsp;&lt;-&nbsp;normales;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_iluminacion&nbsp;&lt;-&nbsp;iluminacion;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;corrige&nbsp;el&nbsp;zoom&nbsp;para&nbsp;el&nbsp;cambio&nbsp;de&nbsp;proyección&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self&nbsp;<span class="keywordsign">#</span>&nbsp;set_zoom&nbsp;zoom</code></body></html>

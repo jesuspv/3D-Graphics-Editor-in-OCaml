@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE escena SYSTEM "../etc/escena.dtd">
+
+<escena>
+  <visualizacion>
+    <camara nombre="Superior" proyeccion="ortogonal" sentido="antihorario" modo="alambrico" z-buffer="on" culling="off" sombreado="plano" normales="poligono" iluminacion="off">
+      <situacion x="0.00" y="1.00" z="-0.25"/>
+      <giro x="-90.00" y="0.00" z="-0.00"/>
+      <zoom factor="1.00"/>
+    </camara>
+    <camara nombre="Anterior" proyeccion="ortogonal" sentido="antihorario" modo="alambrico" z-buffer="on" culling="off" sombreado="plano" normales="poligono" iluminacion="off">
+      <situacion x="0.00" y="1.42" z="1.00"/>
+      <giro x="-0.00" y="0.00" z="-0.00"/>
+      <zoom factor="1.00"/>
+    </camara>
+    <camara nombre="Izquierda" proyeccion="ortogonal" sentido="antihorario" modo="alambrico" z-buffer="on" culling="off" sombreado="plano" normales="poligono" iluminacion="off">
+      <situacion x="-1.00" y="1.43" z="-0.25"/>
+      <giro x="0.00" y="-90.00" z="0.00"/>
+      <zoom factor="1.00"/>
+    </camara>
+    <camara nombre="Perspectiva" proyeccion="perspectiva" sentido="antihorario" modo="solido" z-buffer="on" culling="on" sombreado="suavizado" normales="vertice" iluminacion="on">
+      <situacion x="2.13" y="4.39" z="2.26"/>
+      <giro x="-57.05" y="27.35" z="34.50"/>
+      <zoom factor="1.00"/>
+    </camara>
+  </visualizacion>
+  <iluminacion>
+    <ambiental r="0.15" g="0.15" b="0.15" a="1.00"/>
+    <puntual nombre="Puntual">
+      <atenuacion distancia="lineal" factor="1.00"/>
+      <especular r="1.00" g="1.00" b="1.00" a="1.00"/>
+      <difusa r="1.00" g="1.00" b="1.00" a="1.00"/>
+      <ambiente r="1.00" g="1.00" b="1.00" a="1.00"/>
+      <posicion x="0.27" y="1.58" z="-0.25"/>
+    </puntual>
+    <direccional nombre="Solar">
+      <atenuacion distancia="lineal" factor="1.00"/>
+      <especular r="1.00" g="1.00" b="0.90" a="1.00"/>
+      <difusa r="0.80" g="0.80" b="0.70" a="1.00"/>
+      <ambiente r="0.60" g="0.60" b="0.50" a="1.00"/>
+      <posicion x="1.5" y="1.50" z="-0.25"/>
+      <orientacion x="-90.00" y="-13.20" z="0.00"/>
+    </direccional>
+  </iluminacion>
+  <geometria>
+    <toro nombre="Codo" interior="0.25" exterior="0.50" grados="90.00" meridianos="32" paralelos="16">
+      <material nombre="Cristal">
+        <brillo factor="10.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="0.50"/>
+        <difuso r="0.80" g="0.80" b="1.00" a="0.50"/>
+        <ambiente r="0.10" g="0.10" b="0.10" a="0.50"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="0.00" y="1.00" z="-0.50"/>
+        <rotacion x="0.00" y="90.00" z="0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+    </toro>
+    <cilindro nombre="Cilindro" base="0.25" altura="0.50" meridianos="32" paralelos="1">
+      <material nombre="Cristal">
+        <brillo factor="10.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="0.50"/>
+        <difuso r="0.80" g="0.80" b="1.00" a="0.50"/>
+        <ambiente r="0.10" g="0.10" b="0.10" a="0.50"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="0.50" y="1.00" z="-0.25"/>
+        <rotacion x="-90.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+    </cilindro>
+    <toro nombre="Codo" interior="0.25" exterior="0.50" grados="90.00" meridianos="32" paralelos="16">
+      <material nombre="Cristal">
+        <brillo factor="10.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="0.50"/>
+        <difuso r="0.80" g="0.80" b="1.00" a="0.50"/>
+        <ambiente r="0.10" g="0.10" b="0.10" a="0.50"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="-0.00" y="1.50" z="0.50"/>
+        <rotacion x="0.00" y="-90.00" z="-90.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+    </toro>
+    <toro nombre="Codo" interior="0.25" exterior="0.50" grados="90.00" meridianos="32" paralelos="16">
+      <material nombre="Cristal">
+        <brillo factor="10.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="0.50"/>
+        <difuso r="0.80" g="0.80" b="1.00" a="0.50"/>
+        <ambiente r="0.10" g="0.10" b="0.10" a="0.50"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="-0.50" y="1.50" z="0.00"/>
+        <rotacion x="-0.00" y="0.00" z="90.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+    </toro>
+    <cilindro nombre="Cilindro" base="0.25" altura="0.50" meridianos="32" paralelos="1">
+      <material nombre="Cristal">
+        <brillo factor="10.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="0.50"/>
+        <difuso r="0.80" g="0.80" b="1.00" a="0.50"/>
+        <ambiente r="0.10" g="0.10" b="0.10" a="0.50"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="-0.50" y="2.00" z="-0.25"/>
+        <rotacion x="-90.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+    </cilindro>
+    <toro nombre="Codo" interior="0.25" exterior="0.50" grados="90.00" meridianos="32" paralelos="16">
+      <material nombre="Cristal">
+        <brillo factor="10.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="0.50"/>
+        <difuso r="0.80" g="0.80" b="1.00" a="0.50"/>
+        <ambiente r="0.10" g="0.10" b="0.10" a="0.50"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="0.00" y="1.00" z="0.00"/>
+        <rotacion x="-0.00" y="0.00" z="-0.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+    </toro>
+    <toro nombre="Codo" interior="0.25" exterior="0.50" grados="90.00" meridianos="32" paralelos="16">
+      <material nombre="Cristal">
+        <brillo factor="10.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="0.50"/>
+        <difuso r="0.80" g="0.80" b="1.00" a="0.50"/>
+        <ambiente r="0.10" g="0.10" b="0.10" a="0.50"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="-0.50" y="1.50" z="-0.50"/>
+        <rotacion x="-180.00" y="0.00" z="-90.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+    </toro>
+    <toro nombre="Codo" interior="0.25" exterior="0.50" grados="90.00" meridianos="32" paralelos="16">
+      <material nombre="Cristal">
+        <brillo factor="10.00"/>
+        <especular r="1.00" g="1.00" b="1.00" a="0.50"/>
+        <difuso r="0.80" g="0.80" b="1.00" a="0.50"/>
+        <ambiente r="0.10" g="0.10" b="0.10" a="0.50"/>
+        <emision r="0.00" g="0.00" b="0.00" a="1.00"/>
+      </material>
+      <transformacion>
+        <traslacion x="-0.00" y="1.50" z="-1.00"/>
+        <rotacion x="0.00" y="-90.00" z="-90.00"/>
+        <escalado x="1.00" y="1.00" z="1.00"/>
+      </transformacion>
+    </toro>
+  </geometria>
+</escena>

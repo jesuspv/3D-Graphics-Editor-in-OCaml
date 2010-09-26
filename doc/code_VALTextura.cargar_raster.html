@@ -1,0 +1,75 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Estado" rel="Chapter" href="Estado.html">
+<link title="Herramientas" rel="Chapter" href="Herramientas.html">
+<link title="Menus" rel="Chapter" href="Menus.html">
+<link title="Vistas" rel="Chapter" href="Vistas.html">
+<link title="Entorno" rel="Chapter" href="Entorno.html">
+<link title="Escena" rel="Chapter" href="Escena.html">
+<link title="Suelo" rel="Chapter" href="Suelo.html">
+<link title="Cilindro" rel="Chapter" href="Cilindro.html">
+<link title="Cono" rel="Chapter" href="Cono.html">
+<link title="Cubo" rel="Chapter" href="Cubo.html">
+<link title="Dibujable" rel="Chapter" href="Dibujable.html">
+<link title="Disco" rel="Chapter" href="Disco.html">
+<link title="Esfera" rel="Chapter" href="Esfera.html">
+<link title="Extrusion" rel="Chapter" href="Extrusion.html">
+<link title="Malla" rel="Chapter" href="Malla.html">
+<link title="Revolucion" rel="Chapter" href="Revolucion.html">
+<link title="Toro" rel="Chapter" href="Toro.html">
+<link title="Transformacion" rel="Chapter" href="Transformacion.html">
+<link title="Editor" rel="Chapter" href="Editor.html">
+<link title="Ventana" rel="Chapter" href="Ventana.html">
+<link title="Reflejos" rel="Chapter" href="Reflejos.html">
+<link title="Sombras" rel="Chapter" href="Sombras.html">
+<link title="XmlMarshal" rel="Chapter" href="XmlMarshal.html">
+<link title="Constructor" rel="Chapter" href="Constructor.html">
+<link title="Defs" rel="Chapter" href="Defs.html">
+<link title="Func" rel="Chapter" href="Func.html">
+<link title="MatRot" rel="Chapter" href="MatRot.html">
+<link title="Serializable" rel="Chapter" href="Serializable.html">
+<link title="Camara" rel="Chapter" href="Camara.html">
+<link title="Luz" rel="Chapter" href="Luz.html">
+<link title="Material" rel="Chapter" href="Material.html">
+<link title="Textura" rel="Chapter" href="Textura.html"><title>Textura.cargar_raster</title>
+</head>
+<body>
+<code class="code"><span class="keyword">let</span>&nbsp;cargar_raster&nbsp;(raster&nbsp;:&nbsp;<span class="constructor">Xml</span>.xml)&nbsp;:&nbsp;int&nbsp;*&nbsp;int&nbsp;*&nbsp;(<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="constructor">GlPix</span>.t&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;ancho&nbsp;=&nbsp;int_of_string&nbsp;(<span class="constructor">Xml</span>.attrib&nbsp;raster&nbsp;<span class="string">"ancho"</span>)<br>
+&nbsp;&nbsp;&nbsp;<span class="keyword">and</span>&nbsp;alto&nbsp;&nbsp;=&nbsp;int_of_string&nbsp;(<span class="constructor">Xml</span>.attrib&nbsp;raster&nbsp;<span class="string">"alto"</span>)<br>
+&nbsp;&nbsp;&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;buffer&nbsp;=&nbsp;<span class="constructor">Xml</span>.pcdata&nbsp;(<span class="constructor">List</span>.nth&nbsp;(<span class="constructor">Xml</span>.children&nbsp;raster)&nbsp;0)&nbsp;<span class="keyword">in</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;obtiene&nbsp;los&nbsp;pixels&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;pixels&nbsp;=&nbsp;<span class="constructor">Array</span>.make&nbsp;(ancho&nbsp;*&nbsp;alto)&nbsp;[|0;&nbsp;0;&nbsp;0;&nbsp;0|]<br>
+&nbsp;&nbsp;&nbsp;<span class="keyword">and</span>&nbsp;ctb&nbsp;=&nbsp;ref&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;<span class="keyword">and</span>&nbsp;ctp&nbsp;=&nbsp;ref&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>&nbsp;!ctb&nbsp;&lt;&nbsp;(<span class="constructor">String</span>.length&nbsp;buffer&nbsp;-&nbsp;1)&nbsp;<span class="keyword">do</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;r&nbsp;=&nbsp;int_of_string&nbsp;(<span class="constructor">String</span>.sub&nbsp;buffer&nbsp;!ctb&nbsp;3)&nbsp;<span class="keyword">in</span>&nbsp;ctb&nbsp;:=&nbsp;!ctb&nbsp;+&nbsp;3;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;g&nbsp;=&nbsp;int_of_string&nbsp;(<span class="constructor">String</span>.sub&nbsp;buffer&nbsp;!ctb&nbsp;3)&nbsp;<span class="keyword">in</span>&nbsp;ctb&nbsp;:=&nbsp;!ctb&nbsp;+&nbsp;3;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;int_of_string&nbsp;(<span class="constructor">String</span>.sub&nbsp;buffer&nbsp;!ctb&nbsp;3)&nbsp;<span class="keyword">in</span>&nbsp;ctb&nbsp;:=&nbsp;!ctb&nbsp;+&nbsp;3;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;a&nbsp;=&nbsp;int_of_string&nbsp;(<span class="constructor">String</span>.sub&nbsp;buffer&nbsp;!ctb&nbsp;3)&nbsp;<span class="keyword">in</span>&nbsp;ctb&nbsp;:=&nbsp;!ctb&nbsp;+&nbsp;3;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pixels.(!ctp)&nbsp;&lt;-&nbsp;[|r;&nbsp;g;&nbsp;b;&nbsp;a|];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;incr&nbsp;ctp<br>
+&nbsp;&nbsp;&nbsp;<span class="keyword">done</span>;<br>
+<br>
+&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;establece&nbsp;la&nbsp;imagen&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;imagen&nbsp;=&nbsp;<span class="constructor">GlPix</span>.create&nbsp;<span class="keywordsign">`</span>ubyte&nbsp;~format:<span class="keywordsign">`</span>rgba&nbsp;~width:ancho&nbsp;~height:alto&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;y&nbsp;=&nbsp;0&nbsp;<span class="keyword">to</span>&nbsp;alto&nbsp;-&nbsp;1&nbsp;<span class="keyword">do</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;x&nbsp;=&nbsp;0&nbsp;<span class="keyword">to</span>&nbsp;ancho&nbsp;-&nbsp;1&nbsp;<span class="keyword">do</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;pos&nbsp;&nbsp;=&nbsp;y&nbsp;*&nbsp;ancho&nbsp;+&nbsp;x&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;pos'&nbsp;=&nbsp;(alto&nbsp;-&nbsp;1&nbsp;-&nbsp;y)&nbsp;*&nbsp;ancho&nbsp;+&nbsp;x&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Raw</span>.sets&nbsp;(<span class="constructor">GlPix</span>.to_raw&nbsp;imagen)&nbsp;~pos:(4&nbsp;*&nbsp;pos)&nbsp;pixels.(pos')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">done</span><br>
+&nbsp;&nbsp;&nbsp;<span class="keyword">done</span>;<br>
+<br>
+&nbsp;&nbsp;&nbsp;(ancho,&nbsp;alto,&nbsp;imagen)</code></body></html>
